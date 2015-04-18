@@ -1,0 +1,50 @@
+<openerp>
+    <data>
+        <record model='ir.ui.view' id='res_partner_varios'>
+		<field name='name'>product.form.varios</field>
+		<field name='model'>res.partner</field>
+		<field name='inherit_id' ref='base.view_partner_form'/>
+		<field name='type'>form</field>
+		<field name='arch' type='xml'>
+			<notebook position="inside">
+				<page string="Adicionales">
+					<group>
+						<field name="x_tipocont"/>
+						<field name="x_genero"/>
+						<field name="x_rebote"/>
+						<field name="x_operador"/>
+						<field name="x_tipored"/>
+						<field name="x_name1"/>
+						<field name="x_name2"/>
+						<field name="x_apellido1"/>
+						<field name="x_apellido2"/>
+						<field name="x_email2"/>
+						<field name="x_phone2"/>
+						<field name="x_movil2"/>
+						<field name="x_movil3"/>
+						<field name="x_tipodoc"/>
+						<field name="x_nrodoc"/>
+						<field name="x_nrodpto"/>
+					</group>
+					<group>	
+						<field name="urb_id"/>
+						<field name="x_refdir"/>
+					</group>
+				</page>
+			</notebook>	
+		</field>
+	</record>
+
+        <record model='ir.ui.view' id='urb_id_view'>
+		<field name='name'>open_cliente.urb_id</field>
+		<field name='model'>open_cliente.urb</field>
+		<field name='type'>form</field>
+		<field name='arch' type='xml'>
+			<form strin="Distritos">
+				<field name="name"></field>
+			</form>
+		</field>
+	</record>
+   </data>
+</openerp>
+
