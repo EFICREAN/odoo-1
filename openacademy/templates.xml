@@ -3,14 +3,26 @@
     <data>
         
         <record model="ir.ui.view" id="course_tree_view">
-            <field name="name">List of courses</field>
+            <field name="name">course.tree</field>
             <field name="model">openacademy.course</field>
             <field name="type">tree</field>
             <field name="arch" type="xml">
                 <tree string="Course Tree">
                     <field name="name"/>
                     <field name="description"/>
+		    <field name="responsible_id"/>
                 </tree>
+            </field>
+        </record>
+        
+        <record model="ir.ui.view" id="course_search_view">
+            <field name="name">course.search</field>
+            <field name="model">openacademy.course</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="description"/>
+                </search>
             </field>
         </record>
         
@@ -20,19 +32,63 @@
             <field name="type">form</field>
             <field name="arch" type="xml">
                 <form string="Course Form">
-                    <field name="name"></field>
+                  <group>
+		    <field name="name"></field>
 	            <field name="responsible_id"></field>
-                    <notebook position="after" colspan="4">
+                 </group>
+		 <notebook position="after" colspan="4">
                         <page string="Sessions">
-                            <field name="session_ids" nolabel="1" colspan="4"> </field>
+                            <field name="session_ids" nolabel="1" colspan="4"> 
+			    	<tree string = "Registered sessions">
+					<field name="name"/>
+					<field name="instructor_id"/>
+				</tree>	
+  			    </field>
                         </page>
                         <page string="Description">
                             <field name="description" nolabel="1" colspan="4"> </field>
                         </page>
-                    </notebook>
+                 </notebook>
                 </form>
             </field>
         </record>
+	<record model="ir.ui.view" id="session_form_view">
+		<field name="name">session.form</field>
+		<field name="model">openacademy.session</field>
+		<field name="arch" type="xml">
+		  <form string="Session Form">
+		    <sheet>
+			<group>
+			 <group string= "General">
+			  <field name="course_id"/>
+			  <field name="name"/>
+			  <field name="instructor_id"/>
+			 </group>
+			 <group string="Schedule"> 
+			  <field name="name"/>
+			  <field name="start_date"/>
+			  <field name="duration"/>
+			  <field name="seats"/>
+			 </group>
+			</group>
+			<label for="attendee_ids2"/>
+			<field name="attendee_ids2"/>
+		    </sheet>
+		 </form>
+		</field>
+	</record>
+
+       <record model="ir.ui.view" id="session_tree_view">
+            <field name="name">session.tree</field>
+            <field name="model">openacademy.session</field>
+            <field name="arch" type="xml">
+                <tree string="Session Tree">
+                    <field name="name"/>
+                    <field name="course_id"/>
+                </tree>
+            </field>
+        </record>
+
         
         <record model="ir.actions.act_window" id="course_list_action">
             <field name="name">Courses</field>
