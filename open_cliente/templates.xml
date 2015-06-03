@@ -6,9 +6,6 @@
 		<field name='inherit_id' ref='base.view_partner_form'/>
 		<field name='type'>form</field>
 		<field name='arch' type='xml'>
-			<field name="website" position="after">
-				<field name="brithdate"/>	
-			</field>
 			<notebook position="inside">
 				<page string="Datos primarios">
 					<group>
