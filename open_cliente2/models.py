@@ -2,34 +2,18 @@
 
 from openerp import models, fields, api
 
-# Cliente - res_partner
-
 class res_partner(models.Model):
 	_name = "res.partner"
 	_inherit = "res.partner"
 
-	x_genero = fields.Selection([('Mujer','Mujer'),('Hombre','Hombre')], string='Genero:')
-	
-	x_tipocont = fields.Selection([('C','C'),('No grato','No grato'),('P','P'),('Ccmp/Trafa','Comp/Trafa')], string='Tipo contacto:')
-  	x_apellido1 = fields.Char(string='Apellido 1:')
-	x_cod_cliente = fields.Char(string="Cod cliente",compute="_compu1")
-
-	@api.one
-	@api.constrains('x_genero','x_tipocont','x_apellido1','id')
-	def _compu1(self):
-		if not self.x_apellido1: # if string is empty then is false
-			x_apellido1x = "Nulo"
-		else:
-			x_apellido1x = self.x_apellido1
-		self.x_cod_cliente = '%s%s%s%s' % (str(self.x_tipocont),
-						 str(self.x_genero),
-							x_apellido1x[:4],str(self.id))
-
+	x_tipocont = fields.Selection([('C1','C'),('C2','No grato'),('C3','P'),('C4','Comp/Trafa')], string='Tipo contacto:')
+	x_genero = fields.Selection([('C1','Mujer'),('C2','Hombre')], string='Genero:')
   	x_rebote= fields.Selection([('R1','Hard'),('R2','Soft')], string='Rebote:')
   	x_operador = fields.Selection([('o1','Movistar'),('o2','Claro'),('o3','Bitel'),('o4','Entel')],string='Operador:')
   	x_tipored= fields.Selection([('R1','RPC'),('R2','RPE')], string='Red privada:')
   	x_name1= fields.Char(string='Nombre 1:')
   	x_name2= fields.Char(string='Nombre 2:')
+  	x_apellido1 = fields.Char(string='Apellido 1:')
   	x_apellido2 = fields.Char(string='Apellido 2:')
   	x_email2 = fields.Char(string='Email 2:')
   	x_phone2 = fields.Char(string='Telefono fijo 2:')
@@ -92,18 +76,4 @@ class hijos(models.Model):
 	x_edad = fields.Integer(string='Edad')
 	x_grado = fields.Char(string='Grado academico',zise=25)
 	hijo_id = fields.Many2one('res.partner',string='hola')
-
-# Beauty trainer
-class beauty_tr(models.Model):
-	_name = "beauty.trainer"
-	x_name_bt = fields.Char(string="Nombre")
-	x_id_bt = fields.Integer(string="id_bt", compute = "_compu2")
-	@api.one
-	def _compu2(self):
-		if not self.any() : # if is empty then is false
-			self.x_id_bt = 1
-		else:
-			self.x_id_bt = self.x_id_bt.max() + 1
-
-		
 

@@ -1,43 +1,14 @@
 <openerp>
     <data>
-    	<record model="ir.ui.view" id="act_bt_view">
-            <field name="name">bt.view</field>
-            <field name="model">beauty.trainer</field>
-            <field name="arch" type="xml">
-            	<form strin="Beauty Trainer">
-					<field name="x_id_bt"/>
-                 	<field name="x_name_bt"/>
-                </form>
-            </field>
-        </record>
-
-    	<record model="ir.actions.act_window" id="act_bt_action">
-            <field name="name">bt.act</field>
-            <field name="res_model">beauty.trainer</field>
-            <field name="view_type">form</field>
-            <field name="view_mode">tree,form</field>
-   	    	<field name="help" type="html">
-				<p class="oe_view_nocontent_create">Create
-				</p>	
-	    	</field>
-        </record>
-
-    	<menuitem action="act_bt_action" name="Beaty Training" id="menu_bt_id" parent="base.menu_sales"
-         />
-
         <record model='ir.ui.view' id='res_partner_varios'>
 		<field name='name'>product.form.varios</field>
 		<field name='model'>res.partner</field>
 		<field name='inherit_id' ref='base.view_partner_form'/>
 		<field name='type'>form</field>
 		<field name='arch' type='xml'>
-			<field name="street" position="after">
-				<field name="street2"/>
-			</field>
 			<field name="website" position="after">
 				<field name="birthdate"/>
 				<field name="x_cod_cliente"/>
-				<field name="id"/>
 			</field>
 			<notebook position="inside">
 				<page string="Datos primarios">
@@ -45,7 +16,7 @@
 					   <group>
 						<field name="x_tipocont"/>
 						<field name="x_genero"/>
-						<field name="x_name1"/>i
+						<field name="x_name1"/>
 						<field name="x_name2"/>
 					   </group>
 					   <group>		
@@ -53,7 +24,7 @@
 						<field name="x_apellido2"/>
 						<field name="x_tipodoc"/>
 						<field name="x_nrodoc"/>
-					a   </group>
+					   </group>
 					   <group>		
 						<field name="x_nrodpto"/>
 						<field name="urb_id"/>

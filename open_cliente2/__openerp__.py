@@ -19,28 +19,21 @@
     'category': 'Uncategorized',
     'version': '0.1',
 
-    # any module necessary for this one to work correctly   
+    # any module necessary for this one to work correctly
     'depends': [
 		'product',
-		'base',
-        'crm',
-        'sale',
-        'account'
+		'base'
 		],
 
     # always loaded
     'data': [
         # 'security/ir.model.access.csv',
-        'templates1.xml',
-        'templates2.xml',
-        'templates3.xml'
+        'templates.xml'
     ],
     # only loaded in demonstration mode
     'demo': [
         'demo.xml'
     ],
-    'active': False,
     'installable':True,
-    'application':True,
     'certificate':"",
 }
