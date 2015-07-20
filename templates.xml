@@ -1,0 +1,174 @@
+<openerp>
+    <data>
+    	<record model="ir.ui.view" id="act_bt_view">
+            <field name="name">bt.view</field>
+            <field name="model">beauty.trainer</field>
+            <field name="arch" type="xml">
+            	<form strin="Beauty Trainer">
+					<field name="x_id_bt"/>
+                 	<field name="x_name_bt"/>
+                </form>
+            </field>
+        </record>
+
+    	<record model="ir.actions.act_window" id="act_bt_action">
+            <field name="name">bt.act</field>
+            <field name="res_model">beauty.trainer</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+   	    	<field name="help" type="html">
+				<p class="oe_view_nocontent_create">Create
+				</p>	
+	    	</field>
+        </record>
+
+    	<menuitem action="act_bt_action" name="Beaty Training" id="menu_bt_id" parent="base.menu_sales"
+         />
+
+        <record model='ir.ui.view' id='res_partner_varios'>
+		<field name='name'>product.form.varios</field>
+		<field name='model'>res.partner</field>
+		<field name='inherit_id' ref='base.view_partner_form'/>
+		<field name='type'>form</field>
+		<field name='arch' type='xml'>
+			<field name="street" position="after">
+				<field name="street2"/>
+			</field>
+			<field name="website" position="after">
+				<field name="birthdate"/>
+				<field name="x_cod_cliente"/>
+				<field name="id"/>
+			</field>
+			<notebook position="inside">
+				<page string="Datos primarios">
+					<group>
+					   <group>
+						<field name="x_tipocont"/>
+						<field name="x_genero"/>
+						<field name="x_name1"/>i
+						<field name="x_name2"/>
+					   </group>
+					   <group>		
+						<field name="x_apellido1"/>
+						<field name="x_apellido2"/>
+						<field name="x_tipodoc"/>
+						<field name="x_nrodoc"/>
+					a   </group>
+					   <group>		
+						<field name="x_nrodpto"/>
+						<field name="urb_id"/>
+						<field name="x_refdir"/>	
+						<field name="x_email2"/>
+					   </group>
+					   <group>		
+						<field name="x_phone2"/>
+						<field name="x_movil2"/>
+						<field name="x_movil3"/>
+						<field name="x_rebote"/>
+						<field name="x_operador"/>
+						<field name="x_tipored"/>
+					</group>
+				      </group>
+				</page>
+				<page string="Impacto al cliente">
+					<group>
+					 <group>
+						<field name="x_edadini"/>
+						<field name="x_enc1"/>
+						<field name="x_nombrerec"/>
+						<field name="x_lugarprimeraexp"/>
+					 </group>
+					 <group>
+						<field name="x_campanna"/>
+						<field name="x_canalprimercontac"/>
+						<field name="x_fechaprimercon"/>
+					 </group>
+					</group>
+				</page>
+				<page string="Productos/categ. consultadas">
+					<group>
+					 <group>
+						<field name="x_primerprodcon"/>
+						<field name="x_subcateg_prim"/>
+						<field name="x_categ_prim"/>
+					 </group>
+					 <group>
+						<field name="x_segunprodcon"/>
+						<field name="x_subcateg_segun"/>
+						<field name="x_categ_segun"/>
+					 </group>
+					</group>
+				</page>
+				<page string="Inf. post email/llamada">
+					<group>
+					 <group>
+						<field name="x_obsnecesidad"/>
+						<field name="x_rpta_consultas"/>
+						<field name="x_eval_postcom"/>
+						<field name="x_servicio_casa"/>
+					 </group>
+					 <group>
+						<field name="x_exp_servicio"/>
+						<field name="x_exp_delivery"/>
+						<field name="x_usa_internet"/>
+						<field name="x_recibir_prom"/>
+					 </group>
+					</group>
+				</page>
+				<page string="Inf. secundaría">
+					<group>
+					 <group>
+						<field name="x_usa_fb"/>
+						<field name="x_usa_twitter"/>
+						<field name="x_interes_internet"/>
+						<field name="ocupacion_id"/>
+						<field name="x_job"/>
+					 </group>
+					 <group>
+						<field name="x_job_sector"/>
+						<field name="x_job_puesto"/>
+						<field name="x_carrera"/>
+						<field name="x_estadocivil"/>
+						<field name="x_nrohijos"/>
+					 </group>
+					 <group colspan="2" col="2">
+						<label for="Detalle por hijo"/>
+						<field name="Detalle_por_hijo" nolabel="1"/>
+					 </group>
+					</group>
+				</page>
+			</notebook>	
+		</field>
+	</record>
+
+        <record model='ir.ui.view' id='urb_id_view'>
+		<field name='name'>open_cliente.urb_id</field>
+		<field name='model'>open_cliente.urb</field>
+		<field name='type'>form</field>
+		<field name='arch' type='xml'>
+			<form strin="Distritos">
+				<field name="name"></field>
+			</form>
+		</field>
+	</record>
+        <record model='ir.ui.view' id='hijo_id_view'>
+		<field name='name'>open_cliente.hijo_id</field>
+		<field name='model'>open_cliente.hijos</field>
+		<field name='type'>form</field>
+		<field name='arch' type='xml'>
+			<form strin="Detalle hijos">
+			  <group>
+			   <group>
+				<field name="x_genero"></field>
+				<field name="x_edad"></field>
+			   </group>
+			   <group>
+				<field name="x_grado"></field>
+			   </group>
+			  </group>
+			</form>
+		</field>
+	</record>
+   </data>
+</openerp>
+

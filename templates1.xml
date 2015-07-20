@@ -1,0 +1,111 @@
+<!-- PARTNER VIEW -->
+<openerp>
+    <data>
+    	<record model='ir.ui.view' id='res_partner_varios'>
+		<field name='name'>product.form.varios</field>
+		<field name='model'>res.partner</field>
+		<field name='inherit_id' ref='base.view_partner_form'/>
+		<field name='type'>form</field>
+		<field name='arch' type='xml'>
+			<field name="category_id" position="after">
+			 <group>	
+					<field name="x_cod_empresa"/>
+					<field name="x_cod_contacto"/>
+					<field name="x_tipocont"/>
+					<field name="x_genero"/>
+			  </group>
+			</field>
+			<field name="website" position="before">
+				<field name="x_nroofi"/>
+				<field name="x_refdir"/>
+				<field name="x_urb_id"/>
+				<field name="x_codpostal_id2"/>
+				<field name="x_direccion2"/>
+			</field>
+			<field name="website" position="after">
+				<field name="x_twitter"/>
+				<field name="x_linkedln"/>
+				<field name="x_fb"/>
+			</field>
+			<field name="email" position="after">
+				<field name="x_email"/>
+			</field>
+			<field name="title" position="after">
+				<field name="x_obs_emp_cont"/>
+			</field>
+			<notebook position="inside">
+				<page string="Datos Empresa">
+					<group>
+					   <group>
+						<field name="x_tam_empresa"/>
+						<field name="x_categ_ind"/>
+					   </group>
+				      </group>
+				</page>
+				<page string="Datos contacto">
+					<group>
+					 <group>
+						<field name="x_name1"/>
+						<field name="x_name2"/>
+						<field name="x_apellido1"/>
+						<field name="x_apellido2"/>
+						<field name="x_mobil1"/>
+						<field name="x_mobil2"/>
+					 </group>
+					 <group>
+						<field name="x_dpto_contacto"/>
+						<field name="x_evento_origen"/>
+						<field name="x_evento_por"/>
+						<field name="x_fecha_primer"/>
+					 </group>
+					</group>
+				</page>
+			</notebook>	
+		</field>
+	</record>
+
+    <record model='ir.ui.view' id='urb_id_view'>
+		<field name='name'>open_cliente.urb_id</field>
+		<field name='model'>open_cliente.urb</field>
+		<field name='type'>tree</field>
+		<field name='arch' type='xml'>
+			<tree strin="Urbanizaciones">
+				<field name="name"></field>
+			</tree>
+		</field>
+	</record>
+	<record model="ir.actions.act_window" id="act_urb_id_view">
+            <field name="name">open_cliente.urb_id_act</field>
+            <field name="res_model">open_cliente.urb</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+   	    	<field name="help" type="html">
+				<p class="oe_view_nocontent_create">Create
+				</p>	
+	    	</field>
+    </record>
+
+
+	<record model='ir.ui.view' id='categind_id_view'>
+		<field name='name'>open_cliente.categ_ind_view</field>
+		<field name='model'>open_cliente.categ_ind</field>
+		<field name='type'>tree</field>
+		<field name='arch' type='xml'>
+			<tree strin="Categoría industria">
+				<field name="name"></field>
+			</tree>
+		</field>
+	</record>
+	<record model='ir.ui.view' id='codigopostal_view'>
+		<field name='name'>open_cliente.codigopostal_view</field>
+		<field name='model'>open_cliente.codigopostal</field>
+		<field name='type'>tree</field>
+		<field name='arch' type='xml'>
+			<tree strin="Codigo postal">
+				<field name="name"></field>
+			</tree>
+		</field>
+	</record>
+  </data>
+</openerp>
+
