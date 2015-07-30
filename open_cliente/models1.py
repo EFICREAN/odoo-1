@@ -12,11 +12,11 @@ class res_partner(models.Model):
 #Nuevos campos
 #Empresa
 	x_tipocont = fields.Selection([('Cliente','Cliente'),('Prospecto','Prospecto'),('Comercial','Comercial'),
-		('Competencia','Competencia'),('C-Corp','C-Corp'),('Com-Corp','Comp-Corp'),('Comp-Corp','Comp-Corp'),
+		('Competencia','Competencia'),('C-Corp','C-Corp'),('Com-Corp','Com-Corp'),('Comp-Corp','Comp-Corp'),
 		('No grato-Corp','No grato-Corp'),('P-Corp','P-Corp')], string='Tipo contacto:')
   	
 	x_cod_empresa = fields.Char(string='Código empresa:')
-	x_tam_empresa = fields.Selection([('Grande','Grande'),('Mediana','Mediana'),('Pequeña','Pequeña')], string='Tamaño empresa:')
+	x_tam_empresa = fields.Selection([('Grande','Grande'),('Mediana','Mediana'),('Pequenna','Pequenna')], string='Tamaño empresa:')
 	x_categ_ind = fields.Many2one('open_cliente.categ_ind',string="Industria/categoría:")
 	x_refdir = fields.Text(string='Referencia dirección:')
 	x_direccion2 = fields.Text(string='Otras direcciones de interes:')
@@ -47,15 +47,12 @@ class res_partner(models.Model):
 	x_nro_personas = fields.Integer(string='Nro. personas atender:')
 
 
-
-
 class categ_ind(models.Model):
 	_name = "open_cliente.categ_ind"
 	name = fields.Char(string='Industria/categoría:')
 	res_partner_id = fields.One2many('res.partner','x_categ_ind', String="Industria/categoría")
 
 	
-
 class urb(models.Model):
 	_name = "open_cliente.urb"
 	name = fields.Char(string='Urbanización')
@@ -63,7 +60,8 @@ class urb(models.Model):
 
 class codpostal(models.Model):
 	_name = "open_cliente.codigopostal"
-	name = fields.Char(string='Código postal')
+	name = fields.Char(string='Código postal:')
+	distrito = fields.Char(string='Distrito:')
 	res_partner_id = fields.One2many('res.partner','x_codpostal_id2', String="Código Postal")
 	
 

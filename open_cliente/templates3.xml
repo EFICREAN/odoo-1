@@ -43,6 +43,9 @@
 			<field name= "move_id" position="after">
 					<field name="x_nombre_evento"/>
 			</field>
+			<field name= "name" position="after">
+					<field name="x_obs"/>
+			</field>
 		</field>
 	</record>
 

@@ -56,6 +56,12 @@ class account_invoice(models.Model):
 	
 	x_nombre_evento = fields.Many2one('open_cliente.nom_evento',string="Nombre del Evento:")	
 
+class accont_invoice_line(models.Model):
+	_name = 'account.invoice.line'
+	_inherit = 'account.invoice.line'
+
+	x_obs = fields.integer(string="observación")
+	
 
 class nom_evento(models.Model):
 	_name = "open_cliente.nom_evento"

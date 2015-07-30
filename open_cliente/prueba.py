@@ -15,17 +15,19 @@ call = functools.partial(xmlrpclib.ServerProxy(ROOT +
 	'object').execute,DB, uid, PASS)
 
 # 2. Read the sessions
-sessions = call('openacademy.course','search_read', [], ['name','description',
-	'responsible_id'])
-for session in sessions:
-    print "Session %s (%s seats) %s" % (session['name'], session['description'],
-session['responsible_id'])
+Campos = call('account.invoice.line','search_read', [], 
+				['account_id','id','company_id',
+				 'invoice_id','name','price_unit'])
+for Campo in Campos:
+    print "%s || %s || %s || %s || %s || %s" % (Campo['account_id'], Campo['id'],  
+    							Campo['company_id'],Campo['invoice_id'],
+    							Campo['name'],Campo['price_unit'])
 
 #3.create a new session
 
-session_id = call('openacademy.course', 'create',{
-    'name' : 'Curso 3',
-    'description' : 'Descripcion 3',
-    'responsible_id' : 'Administrator'
-})
+#session_id = call('openacademy.course', 'create',{
+#    'name' : 'Curso 3',
+#    'description' : 'Descripcion 3',
+#    'responsible_id' : 'Administrator'
+#})
 
