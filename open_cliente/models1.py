@@ -25,7 +25,8 @@ class res_partner(models.Model):
 	x_fb = fields.Char(string= "Facebook:")
 	x_obs_emp = fields.Text(string="Observación sobre la empresa:")
 	x_nroofi = fields.Char(string='Nro. oficina:')
-  	x_urb_id = fields.Many2one('open_cliente.urb',string="Urbanización:")
+	x_distrito = fields.Many2one('res.country.state',string="Distrito")
+  	x_urb_id = fields.Many2one('open_cliente.urb',string="Urbanización:") #S,domain=[('distrito','=', x_distrito)])
   	x_codpostal_id2 = fields.Many2one('open_cliente.codigopostal',string="Código Postal:")
   	x_obs_emp_cont = fields.Text(string='Observación empresa/contacto:')
 
@@ -56,6 +57,7 @@ class categ_ind(models.Model):
 class urb(models.Model):
 	_name = "open_cliente.urb"
 	name = fields.Char(string='Urbanización')
+	distrito = fields.Char(string='Distrito')
 	res_partner_id = fields.One2many('res.partner','x_urb_id', String="Urbanización")
 
 class codpostal(models.Model):

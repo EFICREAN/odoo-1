@@ -1,10 +1,12 @@
+# -*- coding: utf-8 -*-
+
 import functools
 import xmlrpclib
 import csv
 
 HOST = '104.236.123.102'
-PORT = 8070
-DB = 'miaspa_pr2'
+PORT = 8069
+DB = 'miaspa_bc'
 USER = 'admin'
 PASS = 'admin'
 ROOT = 'https://%s/xmlrpc/' % (HOST)
@@ -17,17 +19,17 @@ call = functools.partial(xmlrpclib.ServerProxy(ROOT +
 	'object').execute,DB, uid, PASS)
 
 # 2. Read the sessions
-xwriter = csv.writer(open('temp.csv','wb'))
+xwriter = csv.writer(open('temp.csv','wb','utf-8'))
 def seleccionA():
-	Campos = call('open_cliente.categ_ind','search_read', [], ['id','name'])
+	Campos = call('res.partner','search_read', [], ['id','name'])
 	for Campo in Campos:
-	#	xwriter.writerow([Campo['name'], Campo['id']])
+		xwriter.writerow([Campo['name'], Campo['id']])
 		print "%s, %s" % (Campo['id'], Campo['name'])
 
 def seleccionB():
 	Campos = call('open_cliente.urb','search_read', [], ['id','name'])
 	for Campo in Campos:
-	#	xwriter.writerow([Campo['name'], Campo['id']])
+		xwriter.writerow([Campo['name'], Campo['id']])
 		print "%s, %s" % (Campo['id'], Campo['name'])
 
 		

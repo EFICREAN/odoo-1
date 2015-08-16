@@ -35,6 +35,7 @@
 		</field>
 	</record>
 
+<!-- https://github.com/odoo/odoo/blob/8.0/addons/account/account_invoice_view.xml  //  <page string="Invoice Lines"> page 354-->
 	<record model='ir.ui.view' id='account_invoice_view'>
 		<field name='name'>account.invoice.viwe</field>
 		<field name='model'>account.invoice</field>
@@ -43,9 +44,30 @@
 			<field name= "move_id" position="after">
 					<field name="x_nombre_evento"/>
 			</field>
-			<field name= "name" position="after">
-					<field name="x_obs"/>
+			<field name= "payment_term" position="after">
+					<field name="x_forma_pago"/>
+					<field name="x_dia_pago"/>
+					<field name="x_dias_credito"/>
+					<field name="x_date_service"/>
+					<field name="x_dia_service"/>
+					<field name="x_lugar_service"/>
+					<field name="x_costos_btt"/>
 			</field>
+			<field name= "date_invoice" position="after">
+					<field name="x_date_delivery"/>
+			</field>
+			<field name= "quantity" position="before">
+					<field name="x_nro_horas"/>
+					<field name="x_dias"/>
+					<field name="x_q_modulos"/> 
+			</field>
+			<notebook position="inside">
+				<page string="Adicionales">
+					<group>
+						<field name="x_btt"/>
+					</group>
+				</page>
+			</notebook>
 		</field>
 	</record>
 
