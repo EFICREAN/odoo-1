@@ -51,25 +51,26 @@ class res_partner(models.Model):
 class categ_ind(models.Model):
 	_name = "open_cliente.categ_ind"
 	name = fields.Char(string='Industria/categoría:')
-	res_partner_id = fields.One2many('res.partner','x_categ_ind', String="Industria/categoría")
+	res_partner_id = fields.One2many('res.partner','x_categ_ind', string="Industria/categoría")
 
 	
 class urb(models.Model):
 	_name = "open_cliente.urb"
 	name = fields.Char(string='Urbanización')
 	distrito = fields.Char(string='Distrito')
-	res_partner_id = fields.One2many('res.partner','x_urb_id', String="Urbanización")
+	res_partner_id = fields.One2many('res.partner','x_urb_id', string="Urbanización")
+	
 class distrito(models.Model):
 	_name = "open_cliente.distrito"
 	name = fields.Char(string='Distrito')
 	codigo = fields.Char(string='codigo')
-	x_distrito_id = fields.One2many('res.partner','x_distrito', String="Distrio")
+	x_distrito_id = fields.One2many('res.partner','x_distrito', string="Distrio")
 	
 class codpostal(models.Model):
 	_name = "open_cliente.codigopostal"
 	name = fields.Char(string='Código postal:')
 	distrito = fields.Char(string='Distrito:')
-	res_partner_id = fields.One2many('res.partner','x_codpostal_id2', String="Código Postal")
+	res_partner_id = fields.One2many('res.partner','x_codpostal_id2', string="Código Postal")
 	
 
 
