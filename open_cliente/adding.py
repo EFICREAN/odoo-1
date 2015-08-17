@@ -4,7 +4,7 @@ import csv
 
 HOST = '104.236.123.102'
 PORT = 8070
-DB = 'miaspa_pr2'
+DB = 'miaspa_bc'
 USER = 'admin'
 PASS = 'admin'
 ROOT = 'https://%s/xmlrpc/' % (HOST)
