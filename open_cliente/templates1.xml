@@ -65,6 +65,27 @@
 	</record>
 
 <!-- TABLAS -->
+ <record model='ir.ui.view' id='distrito_id_view'>
+		<field name='name'>open_cliente.distrito_id</field>
+		<field name='model'>open_cliente.distrito</field>
+		<field name='type'>tree</field>
+		<field name='arch' type='xml'>
+			<tree strin="Distritos">
+				<field name="name"></field>
+			</tree>
+		</field>
+	</record>
+	<record model="ir.actions.act_window" id="distrito_id_act">
+            <field name="name">open_cliente.distrito_id_act</field>
+            <field name="res_model">open_cliente.distrito</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+   	    	<field name="help" type="html">
+				<p class="oe_view_nocontent_create">Create
+				</p>	
+	    	</field>
+    </record>
+    
     <record model='ir.ui.view' id='urb_id_view'>
 		<field name='name'>open_cliente.urb_id</field>
 		<field name='model'>open_cliente.urb</field>
@@ -158,7 +179,8 @@
     <menuitem id="categind_menu" name="Categoría Industrial" parent="base.menu_tablas" action="categind_id_act" sequence="2"/>
     <menuitem id="codpostal_menu" name="Código Postal" parent="base.menu_tablas" action="codigopostal_act" sequence="3"/>
     <menuitem id="servcorp_menu" name="Servicios Corporativos" parent="base.menu_tablas" action="serv_corp_act" sequence="4"/>
-  	<menuitem id="nomevento_menu" name="Nombre del Evento" parent="base.menu_tablas" action="nom_evento_act" sequence="5"/>
+    <menuitem id="nomevento_menu" name="Nombre del Evento" parent="base.menu_tablas" action="nom_evento_act" sequence="5"/>
+     <menuitem id="distrito_menu" name="Distritos" parent="base.menu_tablas" action="distrito_id_act" sequence="6"/>
   </data>
 </openerp>
  
