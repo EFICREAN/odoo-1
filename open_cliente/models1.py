@@ -16,7 +16,7 @@ class res_partner(models.Model):
 		('No grato-Corp','No grato-Corp'),('P-Corp','P-Corp')], string='Tipo contacto:')
   	
 	x_cod_empresa = fields.Char(string='Código empresa:')
-	x_tam_empresa = fields.Selection([('Grande','Grande'),('Mediana','Mediana'),('Pequeña','Pequena')], string='Tamaño empresa:')
+	x_tam_empresa = fields.Selection([('Grande','Grande'),('Mediana','Mediana'),('Pequenna','Pequeña')], string='Tamaño empresa:')
 	x_categ_ind = fields.Many2one('open_cliente.categ_ind',string="Industria/categoría:")
 	x_refdir = fields.Text(string='Referencia dirección:')
 	x_direccion2 = fields.Text(string='Otras direcciones de interes:')
