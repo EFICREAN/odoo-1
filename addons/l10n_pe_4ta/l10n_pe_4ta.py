@@ -19,7 +19,7 @@
 #
 ##############################################################################
 
-from osv import osv, fields
+from openerp.osv import osv, fields
 import time
 
 class l10n_pe_4ta_suspension(osv.Model):

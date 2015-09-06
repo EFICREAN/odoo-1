@@ -19,8 +19,8 @@
 #
 ##############################################################################
 
-from osv import osv, fields
-from tools.translate import _
+from openerp.osv import osv, fields
+from openerp.tools.translate import _
 import time
 
 class base_table(osv.osv):

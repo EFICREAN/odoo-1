@@ -19,8 +19,8 @@
 #
 ##############################################################################
 
-from osv import osv, fields
-import netsvc
+from openerp.osv import osv, fields
+import openerp.netsvc
 import datetime
 
 class ir_translation(osv.osv):
