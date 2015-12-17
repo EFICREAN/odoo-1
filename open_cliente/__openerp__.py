@@ -7,7 +7,7 @@
         subtitle on modules listing or apps.openerp.com""",
 
     'description': """
-        Long description of module's purpose
+        Add new funtionality and modify forms for miaspa corporate 
     """,
 
     'author': "Your Company",
