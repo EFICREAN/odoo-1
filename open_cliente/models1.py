@@ -72,8 +72,35 @@ class codpostal(models.Model):
 	distrito = fields.Char(string='Distrito:')
 	res_partner_id = fields.One2many('res.partner','x_codpostal_id2', string="Código Postal")
 	
-
-
-
-
+class btr(models.Model):
+        _name = "res.users"
+        _inherit = "res.users"
+        x_nombre1 = fields.Char(string='Primer Nombre:')
+        x_nombre2 = fields.Char(string='Segundo Nombre:')
+        x_apellido1 = fields.Char(string='Primer Apellido:')
+        x_apellido2 = fields.Char(string='Segundo Apellido:')
+        x_email1 = fields.Char(string='Correo:')
+        x_email2 = fields.Char(string='Correo Alternativo:')
+        x_telefono_fijo1 = fields.Char(string='Telefono fijo:')
+	x_movil1 = fields.Char(string='Movil principal:')
+	x_movil2 = fields.Char(string='Movil adicional:')
+	x_direcc = fields.Char(string='Direccion:')
+	x_dpto = fields.Char(string= 'nro de dpto:')
+	x_urb = fields.Char(string='Urbanizacion')
+	x_distrito = fields.Char(string='Distrito:')
+	x_refdir = fields.Char(string='Referencia de direccion')
+	x_codpostal = fields.Char(string='Codigo postal:')
+	x_dirsec = fields.Char(string='Direccion secundaria:')
+	x_dni = fields.Char(string='DNI:')
+	x_fechanac = fields.Char(string='Fecha de nacimiento:')
+	x_edadact = fields.Char(string='Edad actual:')
+	x_estadociv = fields.Selection([('Casada(o)','Casada(o)'),('Divorciada(o)','Divorciada(o)'),('Soltera(o)','Soltera(o)'),('Conviviente','Conviviente')], string='Estado Civil:')
+	x_ocupactual = fields.Char(string='Ocupacion actual:')
+	x_centro_est = fields.Char(string='Centro(s) de estudios:')
+	x_culminaste = fields.Selection([('Si','Si'),('No','No')], string='Culminaste tus estudios?:')
+	x_teconsideras = fields.Text(string='En la industria de la belleza, te consideras?:')
+	x_comollegaste = fields.Text(string='Como llegaste a nosotros?:')
+	
+	x_facebook = fields.Selection([('Si','Si'),('No','No')], string='Usa Facebook?:')
+	x_twitter = fields.Selection([('Si','Si'),('No','No')], string='Usa twitter?:')
 
