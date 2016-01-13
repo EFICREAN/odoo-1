@@ -5,6 +5,8 @@ from openerp import models, fields, api
 class btr(models.Model):
         _name = "res.users"
         _inherit = "res.users"
+	x_tipocont = fields.Selection([('Espe','Espe'),('Otros','Otros')], string='Tipo Usuario:')
+	x_trato = fields.Selection([('Srta','Srta'),('Sra','Sra'),('Sr.','Sr.')], string='Trato:')
         x_nombre1 = fields.Char(string='Primer Nombre:')
         x_nombre2 = fields.Char(string='Segundo Nombre:')
         x_apellido1 = fields.Char(string='Primer Apellido:')
@@ -43,7 +45,7 @@ class btr(models.Model):
 	
 class nrohijos(models.Model):
 	_name = "open_cliente.nrohijos"
-	#name = fields.Char(string='Detalle hijos', )
+	name = fields.Char(string='Nro de hijos')
 	x_sexo = fields.Selection([('Mujer','Mujer'),('Hombre','Hombre')], string='Sexo:')
 	x_edad = fields.Integer(string='Edad')
 	x_grado = fields.Char(string='Grado')
