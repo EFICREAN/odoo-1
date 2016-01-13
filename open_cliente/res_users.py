@@ -39,7 +39,7 @@ class btr(models.Model):
 	x_nrocta = fields.Char(string='Nro. de cta (S/.):')
 	x_titular = fields.Char(string='Titula cta :')
 	x_idnrohijos = fields.One2many('open_cliente.nrohijos','x_id_nrohijos',string='Detalle hijos')
-	x_distrito_usr = fields.Many2one('open_cliente.distrito',string='Distrito:',)
+	x_distrito_usr = fields.Many2one('open_cliente.distrito',string='Distrito:')
   	x_urb_usr = fields.Many2one('open_cliente.urb',string="Urbanización:") #S,domain=[('distrito','=', x_distrito)])
   	x_codpostal_usr = fields.Many2one('open_cliente.codigopostal',string="Código Postal:")
 	
