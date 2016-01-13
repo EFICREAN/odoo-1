@@ -1,7 +1,6 @@
 <!-- PARTNER VIEW -->
 <openerp>
     <data>
-		
     	<record model='ir.ui.view' id='res_partner_varios'>
 		<field name='name'>product.form.varios</field>
 		<field name='model'>res.partner</field>
@@ -59,43 +58,6 @@
 						<field name="x_fecha_primer"/>
 					 </group>
 					</group>
-				</page>
-			</notebook>	
-		</field>
-	</record>
-
-    	<record model='ir.ui.view' id='res_users'>
-		<field name='name'>user.form.btt</field>
-		<field name='model'>res.users</field>
-		<field name='inherit_id' ref='base.view_users_form'/>
-		<field name='type'>form</field>
-		<field name='arch' type='xml'>
-			<notebook position="inside">
-				<page string="Datos usuario">
-					<group>
-					   <group>
-						<field name="x_nombre1"/>
-						<field name="x_nombre2"/>
-						<field name="x_apellido1"/>
-						<field name="x_apellido2"/>
-						<field name="x_email1"/>
-						<field name="x_email2"/>
-						<field name="x_telefono_fijo1"/>
-						<field name="x_movil1"/>
-						<field name="x_movil2"/>
-					   </group>
-					   <group>
-						<field name="x_direcc"/>
-						<field name="x_dpto"/>
-						<field name="x_urb"/>
-						<field name="x_distrito"/>
-						<field name="x_refdir"/>
-						<field name="x_codpostal"/>
-						<field name="x_dirsec"/>
-						<field name="x_dni"/>
-						<field name="x_fechanac"/>
-					   </group>
-				      </group>
 				</page>
 			</notebook>	
 		</field>

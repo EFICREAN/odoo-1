@@ -33,6 +33,7 @@
         # 'security/ir.model.access.csv',
         'templates1.xml',
         'templates2.xml',
+        'res_users.xml',
         'templates3.xml'
     ],
     # only loaded in demonstration mode

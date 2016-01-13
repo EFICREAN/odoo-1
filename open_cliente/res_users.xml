@@ -1,0 +1,66 @@
+<!-- PARTNER VIEW -->
+<openerp>
+    <data>
+    	<record model='ir.ui.view' id='res_users'>
+		<field name='name'>user.form.btt</field>
+		<field name='model'>res.users</field>
+		<field name='inherit_id' ref='base.view_users_form'/>
+		<field name='type'>form</field>
+		<field name='arch' type='xml'>
+			<notebook position="inside">
+				<page string="Datos usuario">
+					<group>
+					   <group>
+						<field name="x_nombre1"/>
+						<field name="x_nombre2"/>
+						<field name="x_apellido1"/>
+						<field name="x_apellido2"/>
+						<field name="x_email1"/>
+						<field name="x_email2"/>
+						<field name="x_telefono_fijo1"/>
+						<field name="x_movil1"/>
+						<field name="x_movil2"/>
+					   </group>
+					   <group>
+						<field name="x_direcc"/>
+						<field name="x_dpto"/>
+						<field name="x_distrito_usr"/>
+						<field name="x_urb_usr"/>
+						<field name="x_codpostal_usr"/>
+						<field name="x_refdir"/>
+						<field name="x_dirsec"/>
+						<field name="x_dni"/>
+						<field name="x_fechanac"/>
+					   </group>
+				      </group>
+				</page>
+				<page string="Datos adicionales">
+					<group>
+					   <group>
+						<field name="x_edadact"/>
+						<field name="x_estadociv"/>
+						<field name="x_ocupactual"/>
+						<field name="x_centro_est"/>
+						<field name="x_culminaste"/>
+						<field name="x_teconsideras"/>
+					   </group>
+					   <group>
+						<field name="x_comollegaste"/>
+						<field name="x_facebook"/>
+						<field name="x_twitter"/>
+						<field name="x_referenciado"/>
+						<field name="x_fechareg"/>
+						<field name="x_bco"/>
+						<field name="x_nrocta"/>
+						<field name="x_titular"/>
+					   </group>
+				      </group>
+				<field name="x_idnrohijos"/>
+				</page>
+			</notebook>	
+		</field>
+	</record>
+<!-- TABLAS -->
+  </data>
+</openerp>
+ 
