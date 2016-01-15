@@ -42,6 +42,7 @@ class btr(models.Model):
 	x_distrito_usr = fields.Many2one('open_cliente.distrito',string='Distrito:')
   	x_urb_usr = fields.Many2one('open_cliente.urb',string="Urbanización:") #S,domain=[('distrito','=', x_distrito)])
   	x_codpostal_usr = fields.Many2one('open_cliente.codigopostal',string="Código Postal:")
+	x_encuesta_id = fields.One2many('open_cliente.btr_enc','x_encuesta',string='Encuesta:')
 	
 class nrohijos(models.Model):
 	_name = "open_cliente.nrohijos"

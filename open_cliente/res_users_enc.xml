@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+	 <record model='ir.ui.view' id='btr_enc_id_view'>
+                <field name='name'>Encuesta</field>
+                <field name='model'>open_cliente.btr_enc</field>
+                <field name='type'>form</field>
+                <field name='arch' type='xml'>
+			<notebook position="inside">
+				<page string='Encuesta pag 01'>
+					<group>
+						<group>
+							<separator string='Cabello' colspan='2'/>
+							<field name='x01'/>
+							<field name='x02'/>
+							<field name='x03'/>
+							<field name='x04'/>
+							<field name='x05'/>
+						</group>
+						<group>
+							<separator string='Cabello' colspan='2'/>
+							<field name='x07'/>
+						</group>
+					</group>
+				</page>
+			</notebook>
+		</field>
+	</record>
+
+
+        <record model="ir.actions.act_window" id="btr_enc_id_act">
+            <field name="name">Encuesta</field>
+            <field name="res_model">open_cliente.btr_enc</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+                <field name="help" type="html">
+                                <p class="oe_view_nocontent_create">Create
+                                </p>
+                </field>
+        </record>
+    	<record model='ir.ui.view' id='res_users_enc'>
+		<field name='name'>user.form.btt_enc</field>
+		<field name='model'>res.users</field>
+		<field name='inherit_id' ref='base.view_users_form'/>
+		<field name='type'>form</field>
+		<field name='arch' type='xml'>
+			<notebook position="inside">
+				<page string='Encuesta'>
+					<group>
+						<field name='x_encuesta_id'/>
+					</group>
+				</page>
+			</notebook>
+		</field>
+	</record>
+	
+  </data>
+</openerp>
+ 

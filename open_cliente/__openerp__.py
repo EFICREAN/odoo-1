@@ -34,6 +34,7 @@
         'templates1.xml',
         'templates2.xml',
         'res_users.xml',
+        'res_users_enc.xml',
         'templates3.xml'
     ],
     # only loaded in demonstration mode
