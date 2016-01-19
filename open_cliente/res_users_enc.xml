@@ -10,16 +10,133 @@
 				<page string='Encuesta pag 01'>
 					<group>
 						<group>
-							<separator string='Cabello' colspan='2'/>
+							<field name='name'/>
+						<separator string='Servicios COSMETOLOGICOS que manejas' colspan='2'/>	
+						<separator string='Cabello' colspan='2'/>
 							<field name='x01'/>
 							<field name='x02'/>
 							<field name='x03'/>
 							<field name='x04'/>
 							<field name='x05'/>
+						 <separator string='Depilaciones:' colspan='2'/>		
+							<field name='x07'/>	
+							<field name='x08'/>	
+							<field name='x09'/>	
+							<field name='x10'/>	
+						 <separator string='Pestañy cejas:' colspan='2'/>		
+							<field name='x12'/>	
+							<field name='x13'/>	
+							<field name='x14'/>	
+							<field name='x15'/>	
+							<field name='x16'/>	
+							<field name='x17'/>
 						</group>
-						<group>
-							<separator string='Cabello' colspan='2'/>
-							<field name='x07'/>
+						<group>	
+						 <separator string='Manos y pies:' colspan='2'/>		
+							<field name='x19'/>	
+							<field name='x20'/>	
+							<field name='x21'/>	
+							<field name='x22'/>	
+							<field name='x23'/>	
+							<field name='x24'/>	
+							<field name='x25'/>	
+							<field name='x26'/>	
+						 <separator string='Make - Up:' colspan='2'/>		
+							<field name='x28'/>	
+							<field name='x29'/>	
+							<field name='x30'/>	
+							<field name='x31'/>	
+							<field name='x32'/>	
+							<field name='x33'/>	
+							<field name='x34'/>
+						 </group>
+					</group>
+				</page>
+				<page string='Encuesta pag 02'>
+					<group>						
+						<group>						
+						 <separator string='Servicios COSMEATRICOS que manejas' colspan='2'/>		
+						 <separator string='Coberturas y exfoliaciones:' colspan='2'/>		
+							<field name='x37'/>	
+							<field name='x38'/>	
+							<field name='x39'/>	
+						 <separator string='Masajes en general:' colspan='2'/>		
+							<field name='x41'/>	
+							<field name='x42'/>	
+							<field name='x43'/>	
+							<field name='x44'/>	
+							<field name='x45'/>	
+							<field name='x46'/>	
+							<field name='x47'/>	
+							<field name='x48'/>	
+							<field name='x49'/>	
+							<field name='x50'/>	
+							<field name='x51'/>	
+							<field name='x52'/>	
+							<field name='x53'/>
+						 </group>
+						 <group>	
+						 <separator string='.' colspan='2'/>		
+						 <separator string='Faciales:' colspan='2'/>		
+							<field name='x55'/>	
+							<field name='x56'/>	
+							<field name='x57'/>	
+							<field name='x58'/>	
+							<field name='x59'/>	
+							<field name='x60'/>	
+						 <separator string='Micropigmentació :' colspan='2'/>		
+							<field name='x62'/>	
+							<field name='x63'/>	
+							<field name='x64'/>	
+							<field name='x65'/>	
+						 <separator string='Experiencia en venta de productos:' colspan='2'/>		
+							<field name='x67'/>	
+							<field name='x68'/>	
+							<field name='x69'/>	
+							<field name='x70'/>	
+							<field name='x71'/>	
+						</group>
+					</group>
+				</page>
+				<page string='Encuesta pag 03'>
+					<group>		
+						<group>		
+						 <separator string='INSTRUMENTOS que manejas' colspan='2'/>		
+								
+							<field name='x75'/>	
+							<field name='x76'/>	
+							<field name='x77'/>	
+							<field name='x78'/>	
+							<field name='x79'/>	
+							<field name='x80'/>	
+							<field name='x81'/>	
+							<field name='x82'/>	
+							<field name='x83'/>	
+							<field name='x84'/>	
+							<field name='x85'/>	
+							<field name='x86'/>	
+							<field name='x87'/>	
+							<field name='x88'/>	
+							<field name='x89'/>	
+							<field name='x90'/>	
+							<field name='x91'/>	
+							<field name='x92'/>	
+							<field name='x93'/>	
+								
+						</group>		
+						<group>		
+						 <separator string='Ademas marca las siguientes experiencias que hayas acumulado:' colspan='2'/>		
+						 <separator string='Asunto' colspan='2'/>		
+							<field name='x97'/>	
+							<field name='x98'/>	
+							<field name='x99'/>	
+							<field name='x100'/>	
+							<field name='x101'/>	
+							<field name='x102'/>	
+							<field name='x103'/>	
+							<field name='x104'/>	
+							<field name='x105'/>	
+							<field name='x106'/>	
 						</group>
 					</group>
 				</page>

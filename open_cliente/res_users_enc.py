@@ -4,34 +4,33 @@ from openerp import models, fields, api
 
 class btr_enc(models.Model):
         _name = "open_cliente.btr_enc"
-	name = fields.Char(string='Encuesta nro:')
-	x_encuesta = fields.Many2one('res.users',string='Encuesta')
+	name  = fields.Date(string='Fecha encuesta:')
 	x01	=	fields.Selection([('Basica','Basica'),('Media','Media'),('Alta','Alta')],	string='Cepillado de cabello :')				
 	x02	=	fields.Selection([('Basica','Basica'),('Media','Media'),('Alta','Alta')],	string='Planchado de cabello :')				
 	x03	=	fields.Selection([('Basica','Basica'),('Media','Media'),('Alta','Alta')],	string='Corte cabello hombre :')				
 	x04	=	fields.Selection([('Basica','Basica'),('Media','Media'),('Alta','Alta')],	string='Corte cabello mujer :')				
 	x05	=	fields.Selection([('Basica','Basica'),('Media','Media'),('Alta','Alta')],	string='Rizado / ondas de cabello :')				
 								
-	x07	=	fields.Selection([('Basica','Basica'),('Media','Media'),('Alta','Alta')],	string='Decoloracióe vellos :')				
-	x08	=	fields.Selection([('Basica','Basica'),('Media','Media'),('Alta','Alta')],	string='Depilacióorporal con cera :')				
-	x09	=	fields.Selection([('Basica','Basica'),('Media','Media'),('Alta','Alta')],	string='Depilacióorporal laser :')				
-	x10	=	fields.Selection([('Basica','Basica'),('Media','Media'),('Alta','Alta')],	string='Depilacióacial con hilo Hindu :')				
+	x07	=	fields.Selection([('Basica','Basica'),('Media','Media'),('Alta','Alta')],	string='Decoloración de vellos :')				
+	x08	=	fields.Selection([('Basica','Basica'),('Media','Media'),('Alta','Alta')],	string='Depilación  Corporal con cera :')				
+	x09	=	fields.Selection([('Basica','Basica'),('Media','Media'),('Alta','Alta')],	string='Depilación  Corporal laser :')				
+	x10	=	fields.Selection([('Basica','Basica'),('Media','Media'),('Alta','Alta')],	string='Depilación  facial con hilo Hindu :')				
 								
-	x12	=	fields.Selection([('Basica','Basica'),('Media','Media'),('Alta','Alta')],	string='Colocacióe pestañ1x1 :')				
-	x13	=	fields.Selection([('Basica','Basica'),('Media','Media'),('Alta','Alta')],	string='Extensiones de pestañpelo a pelo :')				
-	x14	=	fields.Selection([('Basica','Basica'),('Media','Media'),('Alta','Alta')],	string='Rizado de pestañ:')				
-	x15	=	fields.Selection([('Basica','Basica'),('Media','Media'),('Alta','Alta')],	string='Teñ de pestañ:')				
-	x16	=	fields.Selection([('Basica','Basica'),('Media','Media'),('Alta','Alta')],	string='Teñ de cejas :')				
+	x12	=	fields.Selection([('Basica','Basica'),('Media','Media'),('Alta','Alta')],	string='Colocación  de pestañas:')				
+	x13	=	fields.Selection([('Basica','Basica'),('Media','Media'),('Alta','Alta')],	string='Extensiones de pestañas pelo a pelo:')				
+	x14	=	fields.Selection([('Basica','Basica'),('Media','Media'),('Alta','Alta')],	string='Rizado de pestañas:')				
+	x15	=	fields.Selection([('Basica','Basica'),('Media','Media'),('Alta','Alta')],	string='Teñido  de pestañas :')				
+	x16	=	fields.Selection([('Basica','Basica'),('Media','Media'),('Alta','Alta')],	string='Teñido  de cejas :')				
 	x17	=	fields.Selection([('Basica','Basica'),('Media','Media'),('Alta','Alta')],	string='Planchado de cejas :')				
 								
-	x19	=	fields.Selection([('Basica','Basica'),('Media','Media'),('Alta','Alta')],	string='Manicure con diseñ')				
+	x19	=	fields.Selection([('Basica','Basica'),('Media','Media'),('Alta','Alta')],	string='Manicure con diseño :' )				
 	x20	=	fields.Selection([('Basica','Basica'),('Media','Media'),('Alta','Alta')],	string='Manicure frances / americano :')				
-	x21	=	fields.Selection([('Basica','Basica'),('Media','Media'),('Alta','Alta')],	string='Pedicure con diseñ')				
+	x21	=	fields.Selection([('Basica','Basica'),('Media','Media'),('Alta','Alta')],	string='Pedicure con diseño :' ) 				
 	x22	=	fields.Selection([('Basica','Basica'),('Media','Media'),('Alta','Alta')],	string='Pedicure frances / americano :')				
 	x23	=	fields.Selection([('Basica','Basica'),('Media','Media'),('Alta','Alta')],	string='Uso de parafina para manos y pies :')				
-	x24	=	fields.Selection([('Basica','Basica'),('Media','Media'),('Alta','Alta')],	string='Podologígeriatrica :')				
-	x25	=	fields.Selection([('Basica','Basica'),('Media','Media'),('Alta','Alta')],	string='Podologíortopedica :')				
-	x26	=	fields.Selection([('Basica','Basica'),('Media','Media'),('Alta','Alta')],	string='Podologípreventiva :')				
+	x24	=	fields.Selection([('Basica','Basica'),('Media','Media'),('Alta','Alta')],	string='Podología geriatrica :')				
+	x25	=	fields.Selection([('Basica','Basica'),('Media','Media'),('Alta','Alta')],	string='Podología ortopedica :')				
+	x26	=	fields.Selection([('Basica','Basica'),('Media','Media'),('Alta','Alta')],	string='Podología preventiva :')				
 								
 	x28	=	fields.Selection([('Basica','Basica'),('Media','Media'),('Alta','Alta')],	string='Peinado para novias :')				
 	x29	=	fields.Selection([('Basica','Basica'),('Media','Media'),('Alta','Alta')],	string='Peinados para fiestas :')				
@@ -42,9 +41,9 @@ class btr_enc(models.Model):
 	x34	=	fields.Selection([('Basica','Basica'),('Media','Media'),('Alta','Alta')],	string='Otros servicios COSMETOLOGICOS que maneja(s) :')				
 								
 								
-	x37	=	fields.Selection([('Basica','Basica'),('Media','Media'),('Alta','Alta')],	string='Cobertura / exfoliacióorporal para el aclaramiento / manchas :')				
-	x38	=	fields.Selection([('Basica','Basica'),('Media','Media'),('Alta','Alta')],	string='Cobertura / exfoliacióorporal para la hidratació')				
-	x39	=	fields.Selection([('Basica','Basica'),('Media','Media'),('Alta','Alta')],	string='Cobertura / exfoliacióorporal para mejorar la textura :')				
+	x37	=	fields.Selection([('Basica','Basica'),('Media','Media'),('Alta','Alta')],	string='Cobertura / exfoliación Corporal para el aclaramiento / manchas :')				
+	x38	=	fields.Selection([('Basica','Basica'),('Media','Media'),('Alta','Alta')],	string='Cobertura / exfoliación   Corporal para  la hidratación :')
+	x39	=	fields.Selection([('Basica','Basica'),('Media','Media'),('Alta','Alta')],	string='Cobertura / exfoliación  Corporal para mejorar la textura :')				
 								
 	x41	=	fields.Selection([('Basica','Basica'),('Media','Media'),('Alta','Alta')],	string='Masaje descontracturante en camilla :')				
 	x42	=	fields.Selection([('Basica','Basica'),('Media','Media'),('Alta','Alta')],	string='Masaje Shiatsu en camilla :')				
@@ -57,8 +56,8 @@ class btr_enc(models.Model):
 	x49	=	fields.Selection([('Basica','Basica'),('Media','Media'),('Alta','Alta')],	string='Masajes corporales antiestrias :')				
 	x50	=	fields.Selection([('Basica','Basica'),('Media','Media'),('Alta','Alta')],	string='Drenaje linfatico corporal :')				
 	x51	=	fields.Selection([('Basica','Basica'),('Media','Media'),('Alta','Alta')],	string='Drenaje linfatico facial :')				
-	x52	=	fields.Selection([('Basica','Basica'),('Media','Media'),('Alta','Alta')],	string='Reflexologíde pies :')				
-	x53	=	fields.Selection([('Basica','Basica'),('Media','Media'),('Alta','Alta')],	string='Reflexologímanos :')				
+	x52	=	fields.Selection([('Basica','Basica'),('Media','Media'),('Alta','Alta')],	string='Reflexología de pies :')				
+	x53	=	fields.Selection([('Basica','Basica'),('Media','Media'),('Alta','Alta')],	string='Reflexología de manos :')				
 								
 	x55	=	fields.Selection([('Basica','Basica'),('Media','Media'),('Alta','Alta')],	string='Faciales para hidratar :')				
 	x56	=	fields.Selection([('Basica','Basica'),('Media','Media'),('Alta','Alta')],	string='Faciales para reafirmar/tonificar :')				
@@ -80,12 +79,12 @@ class btr_enc(models.Model):
 								
 								
 								
-	x75	=	fields.Selection([('Basica','Basica'),('Media','Media'),('Alta','Alta')],	string='Instrumentos Cosmetologís :')				
+	x75	=	fields.Selection([('Basica','Basica'),('Media','Media'),('Alta','Alta')],	string='Instrumentos Cosmetologícos:')				
 	x76	=	fields.Selection([('Basica','Basica'),('Media','Media'),('Alta','Alta')],	string='Secadora de cabello :')				
 	x77	=	fields.Selection([('Basica','Basica'),('Media','Media'),('Alta','Alta')],	string='Plancha de cabello :')				
 	x78	=	fields.Selection([('Basica','Basica'),('Media','Media'),('Alta','Alta')],	string='Instrumentos Cosmeatricos :')				
 	x79	=	fields.Selection([('Basica','Basica'),('Media','Media'),('Alta','Alta')],	string='Puntas de Diamante :')				
-	x80	=	fields.Selection([('Basica','Basica'),('Media','Media'),('Alta','Alta')],	string='Ultra Cavitació')				
+	x80	=	fields.Selection([('Basica','Basica'),('Media','Media'),('Alta','Alta')],	string='Ultra Cavitación :')				
 	x81	=	fields.Selection([('Basica','Basica'),('Media','Media'),('Alta','Alta')],	string='Ultra sonido :')				
 	x82	=	fields.Selection([('Basica','Basica'),('Media','Media'),('Alta','Alta')],	string='Vacum :')				
 	x83	=	fields.Selection([('Basica','Basica'),('Media','Media'),('Alta','Alta')],	string='Vaporizador :')				
@@ -93,7 +92,7 @@ class btr_enc(models.Model):
 	x85	=	fields.Selection([('Basica','Basica'),('Media','Media'),('Alta','Alta')],	string='Dermografo :')				
 	x86	=	fields.Selection([('Basica','Basica'),('Media','Media'),('Alta','Alta')],	string='Centrifuga :')				
 	x87	=	fields.Selection([('Basica','Basica'),('Media','Media'),('Alta','Alta')],	string='Altafrecuencia :')				
-	x88	=	fields.Selection([('Basica','Basica'),('Media','Media'),('Alta','Alta')],	string='Electroporació')				
+	x88	=	fields.Selection([('Basica','Basica'),('Media','Media'),('Alta','Alta')],	string='Electroporación')				
 	x89	=	fields.Selection([('Basica','Basica'),('Media','Media'),('Alta','Alta')],	string='Endermologie :')				
 	x90	=	fields.Selection([('Basica','Basica'),('Media','Media'),('Alta','Alta')],	string='Gimnasia pasiva :')				
 	x91	=	fields.Selection([('Basica','Basica'),('Media','Media'),('Alta','Alta')],	string='Manta termica :')				
@@ -112,4 +111,4 @@ class btr_enc(models.Model):
 	x104	=	fields.Selection([('Basica','Basica'),('Media','Media'),('Alta','Alta')],	string='Experiencia en jornadas de 8 ó horas continuas :')				
 	x105	=	fields.Selection([('Basica','Basica'),('Media','Media'),('Alta','Alta')],	string='Experiencia liderando/dirigiendo grupos (2 a 5 personas) :')				
 	x106	=	fields.Selection([('Basica','Basica'),('Media','Media'),('Alta','Alta')],	string='Experiencia trabajando a domicilio :')				
-
+	x_encuesta = fields.Many2one('res.users',string='Encuesta')
