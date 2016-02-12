@@ -9,7 +9,7 @@
 		<field name='inherit_id' ref='product.product_template_only_form_view'/>
 		<field name='type'>form</field>
 		<field name='arch' type='xml'>
-			<field name= "list_price" position="after">
+			<field name= "barcode" position="after">
 				<field name="x_cod_prod2"/>
 			</field>
 		</field>
@@ -19,10 +19,10 @@
     <record model='ir.ui.view' id='crm_leads_view'>
 		<field name='name'>open_cliente.crm_leads_view</field>
 		<field name='model'>crm.lead</field>
-		<field name='inherit_id' ref='crm.crm_case_form_view_leads'/>
+		<field name='inherit_id' ref='crm.crm_case_form_view_oppor'/>
 		<field name='type'>form</field>
 		<field name='arch' type='xml'>
-			<field name="user_id" position="after">	
+			<field name="team_id" position="after">	
 				<field name="x_serv_corp"/>
 			</field>
 			<notebook position="inside">
