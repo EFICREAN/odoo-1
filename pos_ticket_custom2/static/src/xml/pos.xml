@@ -948,16 +948,12 @@
                                 <br />
                                 Ruc:<b><t t-esc="widget.pos.company.email"/></b>
                                 <br />
-                                Telefono:<b><t t-esc="widget.pos.company.phone"/></b>
                 </div>
-                                <br />
-                                <span>=========================================</span>
                                 <br />
 				 Nro. Serie: <b><t t-esc="widget.pos.company.company_registry"/></b>
                                 <br />
                                 Nro. Ticket: <b><t t-esc="order.get('name')"/></b>
                                 <br />
-                                <span>=========================================</span>
                                 <br />
 
             <!-- Footer 
@@ -1016,12 +1012,14 @@
                         </td>
                     </tr>
                 </t>
-                <tr>
+                <!--
+		<tr>
                     <td>Discount:</td>
                     <td class="pos-right-align">
                         <t t-esc="widget.format_currency(order.getDiscountTotal())"/>
                     </td>
                 </tr>
+		-->
                 <tr class="emph">
                     <td>Total:</td>
                     <td class="pos-right-align">
