@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+	<record model='ir.ui.view' id='res_partner_academic'>
+		<field name='name'>res_partner_academic</field>
+		<field name='model'>res.partner</field>
+		<field name='inherit_id' ref='base.view_partner_form'/>
+		<field name='type'>form</field>
+		<field name='arch' type='xml'>
+			<notebook position="inside">
+				<page string="Antecedentes mécos">
+					<group>
+					   <group>
+						<field name="x_asma"/>
+						<field name="x_diabetes"/>
+						<field name="x_cancer"/>
+						<field name="x_hipertencion"/>
+						<field name="x_e_infecciosas"/>
+					   </group>
+					   <group>
+						<field name="x_e_cardiovasculares"/>
+						<field name="x_alergias"/>
+						<field name="x_padres_vivos"/>
+						<field name="x_otros"/>
+						<field name="x_especifique"/>
+					   </group>
+				      </group>
+				</page>
+			</notebook>
+		</field>
+	</record>
+    </data>
+</openerp>
