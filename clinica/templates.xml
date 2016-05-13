@@ -11,7 +11,7 @@
 			<notebook position="inside">
 				<page string="ANTECEDENTES MEDICOS">
 					<group>
-					<separator string="(1) ANTECEDENTES FAMILIARES ( PAPÁ, MAMÁ O HERMANOS ) SUFRE O HA SUFRIDO DE:" colspan="2"/>
+					   <separator string="(1) ANTECEDENTES FAMILIARES ( PAPÁ, MAMÁ O HERMANOS ) SUFRE O HA SUFRIDO DE:" colspan="2"/>
 					   <group>
 						<field name="x_asma"/>
 						<field name="x_diabetes"/>
@@ -29,9 +29,9 @@
 					   <field name="x_especifique"/>	
 					   
 					</group>
-				<!-- 
-				      <group>
-					<separator string="(2) ANTECEDENTES PERSONALES ( PATOLÓGICOS)" colspan="2"/>
+				
+				        <group>
+					   <separator string="(2) ANTECEDENTES PERSONALES ( PATOLÓGICOS)" colspan="2"/>
 					   <group>
 						<field name="y_asma"/>
 						<field name="y_diabetes"/>
@@ -45,12 +45,10 @@
 						<field name="y_padres_vivos"/>
 						<field name="y_otros"/>
 					   </group>
-					   <group>
-					   	<field name="y_especifique"/>
-					   	<field name="y_operaciones_previas_frac"/>
-					   </group>
+					   
+					   <field name="y_especifique"/>
+					   <field name="y_operaciones_previas_frac"/>
 				      </group>
-				 -->
 				</page>
 			</notebook>
 		</field>
