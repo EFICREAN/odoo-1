@@ -58,6 +58,15 @@ class res_partner(models.Model):
 	x_ref_vacunacion_completa = fields.Selection([('SI','SI'),('NO','NO'),('NO RECUERDA','NO RECUERDA')],string='REFIERE VACUNACIÓN COMPLETA:')
 	
 #(5) EPIDEMIOLOGICOS
-	x_tipo_vivienda = fields.Char(string="DROGAS")
-	y_otros = fields.Selection([('SI','SI'),('NO','NO')],string='OTROS:')
+	x_tipo_vivienda = fields.Char(string="TIPO DE VIVIENDA")
+	x_nro_personas_habitacion = fields.Char(string="N° PERSONAS / HABITACIÓN")
+	x_ocupacion = fields.Char(string="OCUPACIÓN")
+	x_viajes = fields.Char(string="VIAJES")
+	
+	y_Luz = fields.Selection([('SI','SI'),('NO','NO')],string='LUZ:')
+	y_agua = fields.Selection([('SI','SI'),('NO','NO')],string='AGUA:')
+	y_desague = fields.Selection([('SI','SI'),('NO','NO')],string='DESAGÚE:')
+	x_medicamentos_uso_cont = fields.Text(string='MEDICAMENTOS DE USO CONTINUO:')
+	
+	
 	
