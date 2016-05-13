@@ -25,11 +25,11 @@
 						<field name="x_padres_vivos"/>
 						<field name="x_otros"/>
 					   </group>
-				<!--	 
+				 
 					   <group>
 					   	<field name="x_especifique"/>	
 					   </group>
-				-->
+			
 					</group>
 				<!-- 
 				      <group>
