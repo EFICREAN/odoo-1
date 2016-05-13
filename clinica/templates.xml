@@ -44,6 +44,34 @@
 					   
 					   <field name="y_especifique"/>
 					   <field name="y_operaciones_previas_frac"/>
+					   <separator string="(3) FISIOLÓGICOS" colspan="2"/>
+					   <group>
+						<field name="y_parto"/>
+						<field name="y_lactancia"/>
+						<field name="y_desarrollo"/>
+					   </group>
+					   <group>
+						<field name="y_carbohidratos"/>
+						<field name="y_proteinas"/>
+						<field name="y_grasas"/>
+						<field name="y_azucares"/>
+					   </group>
+					   <group>
+						<field name="x_menarquia"/>
+						<field name="x_alcohol"/>
+						<field name="x_nro_parejas"/>
+						<field name="x_ritmo_catemenial"/>
+						<field name="x_cafe"/>
+					   </group>
+					    <group>
+						<field name="x_inicio_rrss"/>
+						<field name="x_embarazos"/>
+						<field name="x_tabaco"/>
+						<field name="x_abortos"/>
+						<field name="x_drogas"/>
+					   </group>
+					   <field name="x_nro_parejas_12M"/>
+					    <separator string="(4) INMUNOLÓGICOS" colspan="2"/>
 				      </group>
 				</page>
 			</notebook>
