@@ -2,15 +2,16 @@
 <openerp>
     <data>
 
-	<record model='ir.ui.view' id='res_partner_academic'>
-		<field name='name'>res_partner_academic</field>
-		<field name='model'>res.partner</field>
-		<field name='inherit_id' ref='base.view_partner_form'/>
+	<record model='ir.ui.view' id='medical_patient_view'>
+		<field name='name'>Medical_patient_view</field>
+		<field name='model'>medical.patient</field>
+		<field name='inherit_id' ref='medical.medical_patient_view_form'/>
 		<field name='type'>form</field>
 		<field name='arch' type='xml'>
 			<notebook position="inside">
-				<page string="Antecedentes mécos">
+				<page string="ANTECEDENTES MEDICOS">
 					<group>
+					<separator string="(1) ANTECEDENTES FAMILIARES ( PAPÁ, MAMÁ O HERMANOS ) SUFRE O HA SUFRIDO DE:" colspan="2"/>
 					   <group>
 						<field name="x_asma"/>
 						<field name="x_diabetes"/>
