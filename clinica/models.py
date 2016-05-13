@@ -50,9 +50,10 @@ class res_partner(models.Model):
 	x_inicio_rrss = fields.Char(string="INICIO DE RRSS")
 	x_embarazos = fields.Char(string="EMBARAZOS")
 	x_tabaco = fields.Selection([('SI','SI'),('NO','NO')],string='TABACO:')
-	x_nro_parejas_12M = fields.Char(string="N° PAREJAS EN 12 MESES")
 	x_abortos = fields.Char(string="ABORTOS")
 	x_drogas = fields.Char(string="DROGAS")
+	x_nro_parejas_12M = fields.Char(string="N° PAREJAS EN 12 MESES")
+
 #(4) INMUNOLÓGICOS
 	x_cartilla_vacunacion = fields.Selection([('COMPLETA','COMPLETA'),('INCOMPLETA','INCOMPLETA'),('NO TIENE','NO TIENE')],string='TIENE CARTILLA DE VACUNACIÓN:')
 	x_ref_vacunacion_completa = fields.Selection([('SI','SI'),('NO','NO'),('NO RECUERDA','NO RECUERDA')],string='REFIERE VACUNACIÓN COMPLETA:')
