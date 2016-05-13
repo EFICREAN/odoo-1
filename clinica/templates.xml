@@ -72,6 +72,21 @@
 					   </group>
 					   <field name="x_nro_parejas_12M"/>
 					    <separator string="(4) INMUNOLÓGICOS" colspan="2"/>
+					    	<field name="x_cartilla_vacunacion"/>
+						<field name="x_ref_vacunacion_completa"/>
+					    <separator string="(5) EPIDEMIOLOGICOS" colspan="2"/>
+					     <group>
+						<field name="x_tipo_vivienda"/>
+						<field name="x_nro_personas_habitacion"/>
+						<field name="x_ocupacion"/>
+					     </group>
+					     <group>
+						<field name="x_viajes"/>
+						<field name="y_Luz"/>
+						<field name="y_agua"/>
+						<field name="y_desague"/>
+					      </group>	
+					      <field name="x_medicamentos_uso_cont"/>
 				      </group>
 				</page>
 			</notebook>
