@@ -41,4 +41,19 @@ class res_partner(models.Model):
 	y_proteinas = fields.Selection([('BAJA','BAJA'),('MODERADA','MODERADA'),('ALTA','ALTA')],string='PROTEINAS:')
 	y_grasas = fields.Selection([('BAJA','BAJA'),('MODERADA','MODERADA'),('ALTA','ALTA')],string='GRASAS:')
 	y_azucares = fields.Selection([('BAJA','BAJA'),('MODERADA','MODERADA'),('ALTA','ALTA')],string='AZUCARES:')
-
+	
+	x_menarquia = fields.Char(string="MENARQUIA")
+	x_alcohol = fields.Char(string="ALCOHOL")
+	x_nro_parejas = fields.Char(string="N° PAREJAS")
+	x_ritmo_catemenial = fields.Char(string="RITMO CATEMENIAL")
+	x_cafe = fields.Char(string="CAFÉ")
+	x_inicio_rrss = fields.Char(string="INICIO DE RRSS")
+	x_embarazos = fields.Char(string="EMBARAZOS")
+	x_tabaco = fields.Char(string="TABACO")
+	x_nro_parejas_12M = fields.Char(string="N° PAREJAS EN 12 MESES")
+	x_abortos = fields.Char(string="ABORTOS")
+	x_drogas = fields.Char(string="DROGAS")
+#(4) INMUNOLÓGICOS
+	x_cartilla_vacunacion = fields.Selection([('COMPLETA','COMPLETA'),('INCOMPLETA','INCOMPLETA'),('NO TIENE','NO TIENE')],string='TIENE CARTILLA DE VACUNACIÓN:')
+	x_ref_vacunacion_completa = fields.Selection([('SI','SI'),('NO','NO'),('NO RECUERDA','NO RECUERDA')],string='TIENE CARTILLA DE VACUNACIÓN:')
+	
