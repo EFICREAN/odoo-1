@@ -3,31 +3,31 @@
 from openerp import models, fields, api
 
 class res_partner(models.Model):
-	_name = "res.partner"
-	_inherit = "res.partner"
+	_name = "medical.patient"
+	_inherit = "medical.patient"
 #Antecedentes familiares	
-	x_asma = fields.Selection([('Si','No')],string='ASMA:')
-	x_diabetes = fields.Selection([('Si','No')],string='DIABETES:')
-	x_cancer = fields.Selection([('Si','No')],string='CANCER:')
-	x_hipertencion = fields.Selection([('Si','No')],string='HIPERTENSIÓ:')
-	x_e_infecciosas = fields.Selection([('Si','No')],string='ENFERMEDADES INFECTOCONTAGIOSAS:')
-	x_e_cardiovasculares = fields.Selection([('Si','No')],string='ENFERMEDADES CARDIOVASCULARES:')
-	x_alergias = fields.Selection([('Si','No')],string='ALERGIAS:')
-	x_padres_vivos = fields.Selection([('Si','No')],string='PADRES VIVOS:')
-	x_otros = fields.Selection([('Si','No')],string='OTROS:')
+	x_asma = fields.Selection([('Si','Si'),('No','No')],string='ASMA:')
+	x_diabetes = fields.Selection([('Si','Si'),('No','No')],string='DIABETES:')
+	x_cancer = fields.Selection([('Si','Si'),('No','No')],string='CANCER:')
+	x_hipertencion = fields.Selection([('Si','Si'),('No','No')],string='HIPERTENSIÓN:')
+	x_e_infecciosas = fields.Selection([('Si','Si'),('No','No')],string='ENFERMEDADES INFECTOCONTAGIOSAS:')
+	x_e_cardiovasculares = fields.Selection([('Si','Si'),('No','No')],string='ENFERMEDADES CARDIOVASCULARES:')
+	x_alergias = fields.Selection([('Si','Si'),('No','No')],string='ALERGIAS:')
+	x_padres_vivos = fields.Selection([('Si','Si'),('No','No')],string='PADRES VIVOS:')
+	x_otros = fields.Selection([('Si','Si'),('No','No')],string='OTROS:')
 	x_especifique = fields.Char(string="ESPECIFIQUE")
 
 #Antecedentes Personales (Patologicos)
 	
-	y_asma = fields.Selection([('Si','No')],string='ASMA:')
-	y_diabetes = fields.Selection([('Si','No')],string='DIABETES:')
-	y_cancer = fields.Selection([('Si','No')],string='CANCER:')
-	y_hipertencion = fields.Selection([('Si','No')],string='HIPERTENSIÓ:')
-	y_e_infecciosas = fields.Selection([('Si','No')],string='ENFERMEDADES INFECTOCONTAGIOSAS:')
-	y_e_cardiovasculares = fields.Selection([('Si','No')],string='ENFERMEDADES CARDIOVASCULARES:')
-	y_alergias = fields.Selection([('Si','No')],string='ALERGIAS:')
-	y_padres_vivos = fields.Selection([('Si','No')],string='PADRES VIVOS:')
-	y_otros = fields.Selection([('Si','No')],string='OTROS:')
+	y_asma = fields.Selection([('Si','Si'),('No','No')],string='ASMA:')
+	y_diabetes = fields.Selection([('Si','Si'),('No','No')],string='DIABETES:')
+	y_cancer = fields.Selection([('Si','Si'),('No','No')],string='CANCER:')
+	y_hipertencion = fields.Selection([('Si','Si'),('No','No')],string='HIPERTENSIÓN:')
+	y_e_infecciosas = fields.Selection([('Si','Si'),('No','No')],string='ENFERMEDADES INFECTOCONTAGIOSAS:')
+	y_e_cardiovasculares = fields.Selection([('Si','Si'),('No','No')],string='ENFERMEDADES CARDIOVASCULARES:')
+	y_alergias = fields.Selection([('Si','Si'),('No','No')],string='ALERGIAS:')
+	y_padres_vivos = fields.Selection([('Si','Si'),('No','No')],string='PADRES VIVOS:')
+	y_otros = fields.Selection([('Si','Si'),('No','No')],string='OTROS:')
 	y_especifique = fields.Char(string="ESPECIFIQUE")
 	y_operaciones_previas_frac = fields.Char(string="OPERACIONES PREVIAS Y FRACTURAS")
 #Fisiologicos
