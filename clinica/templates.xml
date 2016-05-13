@@ -25,10 +25,13 @@
 						<field name="x_padres_vivos"/>
 						<field name="x_otros"/>
 					   </group>
+				<!--	 
 					   <group>
 					   	<field name="x_especifique"/>	
 					   </group>
-				      </group>
+				-->
+					</group>
+				<!-- 
 				      <group>
 					<separator string="(2) ANTECEDENTES PERSONALES ( PATOLÓGICOS)" colspan="2"/>
 					   <group>
@@ -49,6 +52,7 @@
 					   	<field name="y_operaciones_previas_frac"/>
 					   </group>
 				      </group>
+				 -->
 				</page>
 			</notebook>
 		</field>
