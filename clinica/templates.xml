@@ -24,8 +24,26 @@
 						<field name="x_alergias"/>
 						<field name="x_padres_vivos"/>
 						<field name="x_otros"/>
-						<field name="x_especifique"/>
 					   </group>
+					   <field name="x_especifique"/>
+				      </group>
+				      	<group>
+					<separator string="(2) ANTECEDENTES PERSONALES ( PATOLÓGICOS)" colspan="2"/>
+					   <group>
+						<field name="y_asma"/>
+						<field name="y_diabetes"/>
+						<field name="y_cancer"/>
+						<field name="y_hipertencion"/>
+						<field name="y_e_infecciosas"/>
+					   </group>
+					   <group>
+						<field name="y_e_cardiovasculares"/>
+						<field name="y_alergias"/>
+						<field name="y_padres_vivos"/>
+						<field name="y_otros"/>
+					   </group>
+					   <field name="y_especifique"/>
+					   <field name="y_operaciones_previas_frac"/>
 				      </group>
 				</page>
 			</notebook>
