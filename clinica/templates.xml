@@ -26,10 +26,8 @@
 						<field name="x_otros"/>
 					   </group>
 				 
-					   <group>
-					   	<field name="x_especifique"/>	
-					   </group>
-			
+					   <field name="x_especifique"/>	
+					   
 					</group>
 				<!-- 
 				      <group>
