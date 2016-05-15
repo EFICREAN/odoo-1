@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "pension",
+    'name': "clinica",
 
-    'summary': "Modulos para fines educativos",
+    'summary': "Modulos para clinica detecta",
 
-    'description': "Modulos para fines educativos",
+    'description': "Modulos para clinica detecta",
 
     'author': "Paul Orellana",
     'website': "www.facebook.com/odooerpperu",
