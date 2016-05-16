@@ -84,15 +84,15 @@ class medical_patient(models.Model):
 	x_apellido_madre = fields.Char(string='Apellido de la madre:')
 	x_otros = fields.Text(string = 'Otros :')
 	
-class appointment(models.Model):
-	_name = "medical.patient"
-	_inherit = "medical.patient"
+#class appointment(models.Model):
+#	_name = "medical.patient"
+#	_inherit = "medical.patient"
 
-	name = fields.Char(
-    		string='Name',
-    		default=lambda self: self._get_default_name(),
-	)
+#	name = fields.Char(
+ #   		string='Name',
+  #  		default=lambda self: self._get_default_name(),
+#	)
 
-	@api.model
-	def _get_default_name(self):
-    	return "test"	
+#	@api.model
+#	def _get_default_name(self):
+ #   	return "test"	
