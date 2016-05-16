@@ -936,21 +936,19 @@
                                 <t t-if="widget.pos.config.receipt_header">
                                         <br />
                                         <div style='text-align:center'>
-                                                <t t-esc="widget.pos.config.receipt_header" />
+                                       <!--         <t t-esc="widget.pos.config.receipt_header" /> -->
                                         </div>
                                 </t>
                                 <br />
                                 <t t-esc="widget.pos.company.name"/>
                                 <br />
-                                <b><t t-esc="widget.pos.company.street"/></b>
+                                 Ruc:<b><t t-esc="widget.pos.company.email"/></b>
                                 <br />
-                                <b><t t-esc="widget.pos.company.street2"/></b>
-                                <br />
-                                Ruc:<b><t t-esc="widget.pos.company.email"/></b>
+                                 Local:<b><t t-esc="widget.pos.config.receipt_header"/></b>
                                 <br />
                 </div>
                                 <br />
-				 Nro. Serie: <b><t t-esc="widget.pos.company.company_registry"/></b>
+				 Nro. Serie: <b><t t-esc="widget.pos.config.receipt_header"/></b>
                                 <br />
                                 Nro. Ticket: <b><t t-esc="order.get('name')"/></b>
                                 <br />
@@ -1047,7 +1045,7 @@
             <t t-if="widget.pos.config.receipt_footer">
                 <br />
                 <div style='text-align:center'>
-                    <t t-esc="widget.pos.config.receipt_footer" />
+                    <!-- <t t-esc="widget.pos.config.receipt_footer" /> -->
                 </div>
             </t>
         </div>
