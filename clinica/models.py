@@ -2,7 +2,7 @@
 
 from openerp import models, fields, api
 
-class res_partner(models.Model):
+class medical_patient(models.Model):
 	_name = "medical.patient"
 	_inherit = "medical.patient"
 #Antecedentes familiares	
@@ -69,5 +69,30 @@ class res_partner(models.Model):
 	y_desague = fields.Selection([('SI','SI'),('NO','NO')],string='DESAGÚE:')
 	x_medicamentos_uso_cont = fields.Text(string='MEDICAMENTOS DE USO CONTINUO:')
 	
+	x_asma = fields.Selection([('SI','SI'),('NO','NO')],string='ASMA:')
+#Hoja de afiliación
+	x_dni = fields.integer(string="DNI:")
+	x_lugar_nac = fields.Char(string="Lugar de Nacimiento:")
+	x_estado_civil = fields.Selection([('S','S'),('C','C'),('V','V'),('D','D')],string='Estado Civil:')
+	x_ocupacion = fields.Char(string='Ocupación:')
+	x_raza = fields.Char(string='Raza:')
+	x_grado_instruccion= fields.Char(string = 'Grado de instrucción:')
+	x_religion = fields.Char(string='Religión:')
+	x_nombre_padre = fields.Char(string='Nombre del padre:')
+	x_apellido_padre = fields.Char(string='Apellido del padre:')
+	x_nombre_madre = fields.Char(string='Nombre de la madre:')
+	x_apellido_madre = fields.Char(string='Apellido de la madre:')
+	x_otros = fields.Text(string = 'Otros :')
 	
-	
+class appointment(models.Model):
+	_name = "medical.patient"
+	_inherit = "medical.patient"
+
+	name = fields.Char(
+    		string='Name',
+    		default=lambda self: self._get_default_name(),
+	)
+
+	@api.model
+	def _get_default_name(self):
+    	return "test"	
