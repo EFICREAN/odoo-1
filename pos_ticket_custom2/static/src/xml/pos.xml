@@ -944,11 +944,11 @@
                                 <br />
                                  Ruc:<b><t t-esc="widget.pos.company.email"/></b>
                                 <br />
-                                 Local:<b><t t-esc="widget.pos.config.receipt_header"/></b>
+                                 Local:<b><t t-esc="widget.pos.config.receipt_footer"/></b>
                                 <br />
                 </div>
                                 <br />
-				 Nro. Serie: <b><t t-esc="widget.pos.config.receipt_header"/></b>
+				<b><t t-esc="widget.pos.config.receipt_header"/></b>
                                 <br />
                                 Nro. Ticket: <b><t t-esc="order.get('name')"/></b>
                                 <br />
