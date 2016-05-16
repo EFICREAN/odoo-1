@@ -71,7 +71,7 @@ class medical_patient(models.Model):
 	
 	x_asma = fields.Selection([('SI','SI'),('NO','NO')],string='ASMA:')
 #Hoja de afiliación
-	x_dni = fields.integer(string="DNI:")
+	x_dni = fields.Integer(string="DNI:")
 	x_lugar_nac = fields.Char(string="Lugar de Nacimiento:")
 	x_estado_civil = fields.Selection([('S','S'),('C','C'),('V','V'),('D','D')],string='Estado Civil:')
 	x_ocupacion = fields.Char(string='Ocupación:')
