@@ -8,6 +8,25 @@
 		<field name='inherit_id' ref='medical.medical_patient_view_form'/>
 		<field name='type'>form</field>
 		<field name='arch' type='xml'>
+			<field name="medical_center_id" position="after">
+				<field name="x_dni"/>
+			</field>
+			<field name="dod" position="after">
+				<field name="x_lugar_nac"/>
+			</field>
+			<field name="website" position="after">
+				<field name="x_estado_civil"/>
+				<field name="x_ocupacion"/>
+				<field name="x_raza"/>
+				<field name="x_grado_instruccion"/>
+				<field name="x_religion"/>
+				<separator string="NOMBRE DE LOS PADRES" colspan="2"/>
+				<field name="x_nombre_padre "/>
+				<field name="x_apellido_padre"/>
+				<field name="x_nombre_madre"/>
+				<field name="x_apellido_madre"/>
+				<field name="x_otros"/>
+			</field>
 			<notebook position="inside">
 				<page string="ANTECEDENTES MEDICOS">
 					<group>
