@@ -21,7 +21,7 @@
 				<field name="x_grado_instruccion"/>
 				<field name="x_religion"/>
 				<separator string="NOMBRE DE LOS PADRES" colspan="2"/>
-				<field name="x_nombre_padre "/>
+				<field name="x_nombre_padre"/>
 				<field name="x_apellido_padre"/>
 				<field name="x_nombre_madre"/>
 				<field name="x_apellido_madre"/>
