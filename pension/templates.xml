@@ -11,10 +11,8 @@
 			<field name="website" position="before" >
 				<field name="x_nrodoc"/>
 				<field name="x_edad"/>
-				<field name="x_grado"/>
-				<field name="x_seccion"/>
-			</field>
-			<field name="email" position="after" >
+				<field name="x_grado1"/>
+				<field name="x_seccion1"/>
 				<field name="x_nombre_padre"/>
 				<field name="x_dni_padre"/>
 				<field name="x_movil_padre"/>
