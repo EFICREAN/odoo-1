@@ -7,8 +7,8 @@ class res_partner(models.Model):
 	_inherit = "res.partner"
 	x_nrodoc = fields.Char(string='DNI del alumno:')
 	x_edad   = fields.Integer(string='Edad:')
-	x_grado = fields.Char(string='Grado:')
-	x_seccion = fields.Char(string='Sección:')
+	x_grado1 = fields.Char(string='Grado:')
+	x_seccion1 = fields.Char(string='Sección:')
 	x_nombre_padre = fields.Char(string="Nombre Padre / Tutor")
 	x_dni_padre = fields.Char(string="DNI del Padre")
 	x_movil_padre = fields.Char(string="Movil del Padre")
