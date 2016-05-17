@@ -13,6 +13,7 @@
 				<field name="x_edad"/>
 				<field name="x_grado"/>
 				<field name="x_seccion"/>
+				<field name="x_nivel"/>
 			</field>
 			<field name="email" position="after" >
 				<field name="x_nombre_padre"/>
