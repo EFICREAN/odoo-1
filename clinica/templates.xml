@@ -109,6 +109,7 @@
 				      </group>
 				</page>
 				<page string="FUNCIONES VITALES">
+					<label for="FUNCIONES VITALES"/>
 					<field name="x_id_funciones_vitales" nolabel="1"/>
 				</page>
 			</notebook>
