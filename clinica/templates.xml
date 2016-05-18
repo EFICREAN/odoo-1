@@ -109,9 +109,24 @@
 				      </group>
 				</page>
 				<page string="FUNCIONES VITALES">
-					<field name="id_funciones_vitales" nolabel="1"/>
+					<field name="x_id_funciones_vitales" nolabel="1"/>
 				</page>
 			</notebook>
+		</field>
+	</record>
+	 <record model='ir.ui.view' id='funvitales_id_view'>
+		<field name='name'>funciones_vitales</field>
+		<field name='model'>funciones.vitales</field>
+		<field name='type'>form</field>
+		<field name='arch' type='xml'>
+			<form string="Funciones Vitales">
+			  <group>
+			   <group>
+				<field name="x_dia"></field>
+				<field name="x_hora"></field>
+			   </group>
+			  </group>
+			</form>
 		</field>
 	</record>
     </data>
