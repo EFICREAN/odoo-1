@@ -250,6 +250,43 @@
              <field name="domain">[]</field>
              <field name="context">{}</field>
          </record>
-
+	<record model='ir.ui.view' id='funciones_vitales_tree'>
+		<field name='name'>funciones_vitales_tree</field>
+		<field name='model'>funciones.vitales</field>
+		<field name='type'>tree</field>
+		<field name='arch' type='xml'>
+			<tree strin="Funciones Vitales">
+				<field name="x_dia"></field>
+				<field name="x_hora"></field>
+			</tree>
+		</field>
+	</record>
+	<record model='ir.ui.view' id='funvitales_id_view'>
+		<field name='name'>funciones_vitales</field>
+		<field name='model'>funciones.vitales</field>
+		<field name='type'>form</field>
+		<field name='arch' type='xml'>
+			<form string="Funciones Vitales">
+			  <group>
+			   <group>
+				<field name="x_dia"></field>
+				<field name="x_hora"></field>
+				<field name="x_pediatrico"> attrs="{'invisible': [('x_adulto','=',True)]}</field>
+				<field name="x_adulto">  attrs="{'invisible': [('x_pediatrico','=',True)]}</field>
+				<field name="x_presion"></field>
+				<field name="X_frecuencia_card"></field>
+			   </group>
+			   <group>
+			   	<field name="X_respiracion"></field>
+				<field name="x_glicenia_tipo"></field>
+				<field name="x_glicenia_cant"></field>
+				<field name="x_temperatura"></field>
+				<field name="x_saturacion"></field>
+				<field name="X_escala_dolor"></field>
+			   </group>
+			  </group>
+			</form>
+		</field>
+	</record>
     </data>
 </openerp>
