@@ -108,6 +108,9 @@
 					      <field name="x_medicamentos_uso_cont"/>
 				      </group>
 				</page>
+				<page string="FUNCIONES VITALES">
+					<field name="id_funciones_vitales" nolabel="1"/>
+				</page>
 			</notebook>
 		</field>
 	</record>
