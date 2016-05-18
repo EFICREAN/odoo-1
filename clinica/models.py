@@ -89,8 +89,23 @@ class medical_patient(models.Model):
 
 class funvitales(models.Model):
 	_name = "funciones.vitales"
-	x_dia = fields.Date(string="Día:")
-	x_hora = fields.Datetime(string="Hora:")
+	x_dia = fields.Date(string="DIA:")
+	x_hora = fields.Datetime(string="HORA:")
+	x_pediatrico =  fields.Boolean(string="PEDIATRICO:")
+	x_adulto =  fields.Boolean(string="ADULTO:")
+	x_presion = fields.Char(string="PRESION ARTERIAL(mmgh)")
+	X_frecuencia_card = fields.Char(string="FRECUENCIA CARDIACA(por minuto):")
+	X_respiracion = fields.Char(string="RESPIRACIÓN(por minutos):")
+	x_glicenia_tipo = fields.Selection([('HIPOGLICENIA','HIPOGLICENIA'),('HIPERGLICENIA','HIPERGLICENIA')],"GLICENIA TIPO:")
+	x_glicenia_cant = fields.Char(string="GLICENIA (Mg/dl):")
+	x_temperatura = fields.Integer(string="TEMPERATURA:")
+	x_saturacion = fields.Char(string="SATURACION OXIGENO:")
+	X_escala_dolor = fields.Selection([('0-Muy contento sin dolor'.'0-Muy contento sin dolor'),
+					   ('2-Siente sólo un poquito de dolor','2-Siente sólo un poquito de dolor'),
+					   ('4-Siente un poco más de dolor','4-Siente un poco más de dolor'),
+					   ('6-Siente aún más dolor','6-Siente aún más dolor'),
+					   ('8-Siente mucho dolor','8-Siente mucho dolor'),
+					   ('10-El dolor es intenso','10-El dolor es intenso')], string="ESCALA DE DOLOR:")
 	id2_funciones_vitales = fields.Many2one('medical.patient',string='Funciones Vitales')
 	
 	
