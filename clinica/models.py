@@ -100,12 +100,7 @@ class funvitales(models.Model):
 	x_glicenia_cant = fields.Char(string="GLICENIA (Mg/dl):")
 	x_temperatura = fields.Integer(string="TEMPERATURA:")
 	x_saturacion = fields.Char(string="SATURACION OXIGENO:")
-	X_escala_dolor = fields.Selection([('0-Muy contento sin dolor'.'0-Muy contento sin dolor'),
-					   ('2-Siente sólo un poquito de dolor','2-Siente sólo un poquito de dolor'),
-					   ('4-Siente un poco más de dolor','4-Siente un poco más de dolor'),
-					   ('6-Siente aún más dolor','6-Siente aún más dolor'),
-					   ('8-Siente mucho dolor','8-Siente mucho dolor'),
-					   ('10-El dolor es intenso','10-El dolor es intenso')], string="ESCALA DE DOLOR:")
+	X_escala_dolor = fields.Selection([('0-Muy contento sin dolor'.'0-Muy contento sin dolor'),('2-Siente sólo un poquito de dolor','2-Siente sólo un poquito de dolor'),('4-Siente un poco más de dolor','4-Siente un poco más de dolor'),('6-Siente aún más dolor','6-Siente aún más dolor'),('8-Siente mucho dolor','8-Siente mucho dolor'),('10-El dolor es intenso','10-El dolor es intenso')], string="ESCALA DE DOLOR:")
 	id2_funciones_vitales = fields.Many2one('medical.patient',string='Funciones Vitales')
 	
 	
