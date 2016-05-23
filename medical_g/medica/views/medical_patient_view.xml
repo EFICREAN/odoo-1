@@ -64,9 +64,9 @@
                                     </group>
                                     <group>
                                         <field name="phone" placeholder="e.g. +32.81.81.37.00"/>
-                                        <field name="mobile"/>
-                                        <field name="fax"/>
-                                        <field name="email" widget="email"/>
+                                        <field name="mobile" invisible="1"/>
+                                        <field name="fax" invisible="1"/>
+                                        <field name="email" widget="email" invisible="1"/>
                                     </group>
                                 </group>
                                 <group  col="4" colspan="4"> 
@@ -78,7 +78,7 @@
                                      <field name="opt_out" string="I don't want to receive comercial messages" colspan="2"/>
                                  </group>
                             </page>
-                            <page string="Dependants">
+                            <page string="Dependants" invisible="1">
                                 <field name="child_ids" context="{'default_contact_id': active_id, 'default_use_parent_address': True, 'default_is_patient': True, 'default_customer': True}}" mode="kanban" domain="[('is_patient', '=', True)]">
                                     <kanban>
                                         <field name="color"/>
