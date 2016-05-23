@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+	<record model='ir.ui.view' id='medical_patient_view'>
+		<field name='name'>Medical_patient_view</field>
+		<field name='model'>medical.patient</field>
+		<field name='inherit_id' ref='medica.medical_patient_view_form'/>
+		<field name='type'>form</field>
+		<field name='arch' type='xml'>
+			<field name="medical_center_id" position="after">
+				<field name="x_dni"/>
+			</field>
+			<field name="dod" position="after">
+				<field name="x_lugar_nac"/>
+			</field>
+			<field name="website" position="after">
+				<field name="x_estado_civil"/>
+				<field name="x_ocupacion"/>
+				<field name="x_raza"/>
+				<field name="x_grado_instruccion"/>
+				<field name="x_religion"/>
+				<separator string="NOMBRE DE LOS PADRES" colspan="2"/>
+				<field name="x_nombre_padre"/>
+				<field name="x_apellido_padre"/>
+				<field name="x_nombre_madre"/>
+				<field name="x_apellido_madre"/>
+				<field name="x_otros"/>
+			</field>
+			<notebook position="inside">
+				<page string="ANTECEDENTES MEDICOS">
+					<group>
+					   <separator string="(1) ANTECEDENTES FAMILIARES ( PAPÁ, MAMÁ O HERMANOS ) SUFRE O HA SUFRIDO DE:" colspan="2"/>
+					   <group>
+						<field name="x_asma"/>
+						<field name="x_diabetes"/>
+						<field name="x_cancer"/>
+						<field name="x_hipertencion"/>
+						<field name="x_e_infecciosas"/>
+					   </group>
+					   <group>
+						<field name="x_e_cardiovasculares"/>
+						<field name="x_alergias"/>
+						<field name="x_padres_vivos"/>
+						<field name="x_otros"/>
+					   </group>
+				 
+					   <field name="x_especifique"/>	
+					   <separator string="(2) ANTECEDENTES PERSONALES ( PATOLÓGICOS)" colspan="2"/>
+					   <group>
+						<field name="y_asma"/>
+						<field name="y_diabetes"/>
+						<field name="y_cancer"/>
+						<field name="y_hipertencion"/>
+						<field name="y_e_infecciosas"/>
+					   </group>
+					   <group>
+						<field name="y_e_cardiovasculares"/>
+						<field name="y_alergias"/>
+						<field name="y_padres_vivos"/>
+						<field name="y_otros"/>
+					   </group>
+					   
+					   <field name="y_especifique"/>
+					   <field name="y_operaciones_previas_frac"/>
+					   <separator string="(3) FISIOLÓGICOS" colspan="2"/>
+					   <group>
+						<field name="y_parto"/>
+						<field name="y_lactancia"/>
+						<field name="y_desarrollo"/>
+					   </group>
+					   <group>
+						<field name="y_carbohidratos"/>
+						<field name="y_proteinas"/>
+						<field name="y_grasas"/>
+						<field name="y_azucares"/>
+					   </group>
+					   <group>
+						<field name="x_menarquia"/>
+						<field name="x_alcohol"/>
+						<field name="x_nro_parejas"/>
+						<field name="x_ritmo_catemenial"/>
+						<field name="x_cafe"/>
+					   </group>
+					    <group>
+						<field name="x_inicio_rrss"/>
+						<field name="x_embarazos"/>
+						<field name="x_tabaco"/>
+						<field name="x_abortos"/>
+						<field name="x_drogas"/>
+					   </group>
+					   <field name="x_nro_parejas_12M"/>
+					    <separator string="(4) INMUNOLÓGICOS" colspan="2"/>
+					    	<field name="x_cartilla_vacunacion"/>
+						<field name="x_ref_vacunacion_completa"/>
+					    <separator string="(5) EPIDEMIOLOGICOS" colspan="2"/>
+					     <group>
+						<field name="x_tipo_vivienda"/>
+						<field name="x_nro_personas_habitacion"/>
+						<field name="x_ocupacion"/>
+					     </group>
+					     <group>
+						<field name="x_viajes"/>
+						<field name="y_Luz"/>
+						<field name="y_agua"/>
+						<field name="y_desague"/>
+					      </group>	
+					      <field name="x_medicamentos_uso_cont"/>
+				      </group>
+				</page>
+				<page string="FUNCIONES VITALES">
+					<label for="FUNCIONES VITALES"/>
+					<field name="x_id_funciones_vitales" nolabel="1"/>
+				</page>
+			</notebook>
+		</field>
+	</record>
+	<record model='ir.ui.view' id='funciones_vitales_tree'>
+		<field name='name'>funciones_vitales_tree</field>
+		<field name='model'>funciones.vitales</field>
+		<field name='type'>tree</field>
+		<field name='arch' type='xml'>
+			<tree strin="Funciones Vitales">
+				<field name="x_dia"></field>
+				<field name="x_hora"></field>
+			</tree>
+		</field>
+	</record>
+	 <record model='ir.ui.view' id='funvitales_id_view'>
+		<field name='name'>funciones_vitales</field>
+		<field name='model'>funciones.vitales</field>
+		<field name='type'>form</field>
+		<field name='arch' type='xml'>
+			<form string="Funciones Vitales">
+			  <group>
+			   <group>
+				<field name="x_dia"></field>
+				<field name="x_hora"></field>
+				<field name="x_pediatrico"> attrs="{'invisible': [('x_adulto','=',True)]}</field>
+				<field name="x_adulto">  attrs="{'invisible': [('x_pediatrico','=',True)]}</field>
+				<field name="x_presion"></field>
+				<field name="X_frecuencia_card"></field>
+			   </group>
+			   <group>
+			   	<field name="X_respiracion"></field>
+				<field name="x_glicenia_tipo"></field>
+				<field name="x_glicenia_cant"></field>
+				<field name="x_temperatura"></field>
+				<field name="x_saturacion"></field>
+				<field name="X_escala_dolor"></field>
+			   </group>
+			  </group>
+			</form>
+		</field>
+	</record>
+    </data>
+</openerp>
