@@ -5,7 +5,7 @@
 	<record model='ir.ui.view' id='medical_patient_view'>
 		<field name='name'>Medical_patient_view</field>
 		<field name='model'>medical.patient</field>
-		<field name='inherit_id' ref='medical.medical_patient_view_form'/>
+		<field name='inherit_id' ref='medica.medical_patient_view_form'/>
 		<field name='type'>form</field>
 		<field name='arch' type='xml'>
 			<field name="medical_center_id" position="after">
