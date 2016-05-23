@@ -121,8 +121,8 @@ class MedicalAppointment(orm.Model):
         'alias': fields.char(size=256, string='Alias', ),
         'comments': fields.text(string='Comments'),
         'appointment_type': fields.selection(
-            [('ambulatory', 'Ambulatory'), ('outpatient', 'Outpatient'),
-             ('inpatient', 'Inpatient'), ], string='Type'),
+            [('Consulta Externa', 'Consulta Externa'), ('Hospitalización', 'Hospitalización'),
+             ('Procedimiento Ambulatorio', 'Procedimiento Ambulatorio'), ], string='Type'),
         'institution_id': fields.many2one('res.partner',
                                           string='Health Center',
                                           help='Medical Center',
