@@ -150,11 +150,11 @@ class MedicalAppointment(orm.Model):
 
     _defaults = {
         'name': '/',
-        'duration': 30.00,
+        'duration': 15.00,
         'urgency': 'a',
         'stage_id': lambda s, cr, uid, c: s._get_default_stage_id(cr, uid, c),
         'user_id': lambda s, cr, u, c: u,
-        'appointment_type': 'outpatient',
+        'appointment_type': 'Consulta Externa',
     }
 
     _group_by_full = {'stage_id': _read_group_stage_ids}
