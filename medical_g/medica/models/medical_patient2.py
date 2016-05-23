@@ -99,8 +99,11 @@ class funvitales(models.Model):
 	X_respiracion = fields.Char(string="RESPIRACIÓN(por minutos):")
 	x_glicenia_tipo = fields.Selection([('HIPOGLICENIA','HIPOGLICENIA'),('HIPERGLICENIA','HIPERGLICENIA')],"GLICENIA TIPO:")
 	x_glicenia_cant = fields.Char(string="GLICENIA (Mg/dl):")
-	x_temperatura = fields.Integer(string="TEMPERATURA:")
+	x_temperatura = fields.Integer(string="TEMPERATURA VALOR:")
+	x_temp = fields.Selection([('SI','SI'),('NO AFEBRIL','NO AFEBRIL')],string='TEMPERATURA:')
 	x_saturacion = fields.Char(string="SATURACION OXIGENO:")
+	X_peso = fields.Char(string="PESO:")
+	x_talla = fields.Char(string="TALLA:")
 	X_escala_dolor = fields.Selection([('0-Muy contento sin dolor','0-Muy contento sin dolor'),
 					   ('2-Siente sólo un poquito de dolor','2-Siente sólo un poquito de dolor'),
 					   ('4-Siente un poco más de dolor','4-Siente un poco más de dolor'),
