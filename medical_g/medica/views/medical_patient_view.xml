@@ -56,7 +56,7 @@
                                             <div class="address_format">
                                                 <field name="city" placeholder="City" style="width: 40%" />
                                                 <field name="state_id" class="no_button" placeholder="State" style="width: 37%" options='{"no_open": True}' />
-                                                <field name="zip" placeholder="ZIP" style="width: 20%" />
+                                                <field name="zip" placeholder="ZIP" style="width: 20%" invisible="1" />
                                             </div>
                                             <field name="country_id" placeholder="Country" class="no_button" options='{"no_open": True}' />
                                         </div>
@@ -71,7 +71,7 @@
                                 </group>
                                 <group  col="4" colspan="4"> 
                                     <field name="marital_status" colspan="2"/>
-                                    <field name="parent_id" colspan="2" string="Legal Representative" domain="[('is_patient','=',True)]"/>
+                                    <field name="parent_id" colspan="2" string="Legal Representative" domain="[('is_patient','=',True)]" invisible="1"/>
                                 </group>
                                 <group  col="4" colspan="4"> 
                                      <field name="lang" colspan="2"/>
