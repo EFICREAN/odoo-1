@@ -42,9 +42,8 @@
 						<field name="x_e_cardiovasculares"/>
 						<field name="x_alergias"/>
 						<field name="x_padres_vivos"/>
-						<field name="x_otros"/>
 					   </group>
-				 
+				 	   <field name="x_otros"/>
 					   <field name="x_especifique"/>	
 					   <separator string="(2) ANTECEDENTES PERSONALES ( PATOLÓGICOS)" colspan="2"/>
 					   <group>
@@ -77,17 +76,17 @@
 					   </group>
 					   <group>
 						<field name="x_menarquia"/>
-						<field name="x_alcohol"/>
+						<field name="x_embarazos"/>
 						<field name="x_nro_parejas"/>
 						<field name="x_ritmo_catemenial"/>
-						<field name="x_cafe"/>
+						<field name="x_drogas"/>
 					   </group>
 					    <group>
 						<field name="x_inicio_rrss"/>
-						<field name="x_embarazos"/>
+						<field name="x_alcohol"/>
 						<field name="x_tabaco"/>
 						<field name="x_abortos"/>
-						<field name="x_drogas"/>
+						<field name="x_cafe"/>
 					   </group>
 					   <field name="x_nro_parejas_12M"/>
 					    <separator string="(4) INMUNOLÓGICOS" colspan="2"/>
@@ -105,8 +104,8 @@
 						<field name="y_agua"/>
 						<field name="y_desague"/>
 					      </group>	
-					      <field name="x_medicamentos_uso_cont"/>
 				      </group>
+				      <field name="x_medicamentos_uso_cont"/>
 				</page>
 				<page string="FUNCIONES VITALES">
 					<label for="FUNCIONES VITALES"/>
@@ -123,6 +122,8 @@
 			<tree strin="Funciones Vitales">
 				<field name="x_dia"></field>
 				<field name="x_hora"></field>
+				<field name="x_presion"></field>
+				<field name="x_temperatura"></field>
 			</tree>
 		</field>
 	</record>
@@ -143,9 +144,10 @@
 			   </group>
 			   <group>
 			   	<field name="X_respiracion"></field>
-				<field name="x_glicenia_tipo"></field>
-				<field name="x_glicenia_cant"></field>
-				<field name="x_temperatura"></field>
+				<field name="x_glicenia_tipo"> invisible="1" </field>
+				<field name="x_glicenia_cant"> </field>
+				<field name="x_temp"></field>
+				<field name="x_temperatura"> attrs="{'invisible': [('x_temp','=','NO')]}</field>
 				<field name="x_saturacion"></field>
 				<field name="X_escala_dolor"></field>
 			   </group>
