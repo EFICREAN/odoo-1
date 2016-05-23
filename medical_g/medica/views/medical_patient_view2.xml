@@ -10,6 +10,8 @@
 		<field name='arch' type='xml'>
 			<field name="medical_center_id" position="after">
 				<field name="x_dni"/>
+				<field name="x_nro_colegio" />
+				<field name="x_medico_detecta" />
 			</field>
 			<field name="dod" position="after">
 				<field name="x_lugar_nac"/>
