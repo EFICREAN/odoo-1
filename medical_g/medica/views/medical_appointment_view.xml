@@ -39,7 +39,7 @@
                         </h1>
                         <group col="4" colspan="4">
                             <field name="patient_id"/>
-                            <field name="alias" />
+                            <field name="alias" invisible="1"/>
                             <field name="appointment_type" />
                             <field name="urgency" />
                         </group>
