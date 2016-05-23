@@ -43,8 +43,8 @@
 						<field name="x_alergias"/>
 						<field name="x_padres_vivos"/>
 					   </group>
-				 	   <field name="x_otros"/>
-					   <field name="x_especifique"/>	
+				 	   <field name="x_otros" colspan="4"/>
+					   <field name="x_especifique" colspan="4"/>	
 					   <separator string="(2) ANTECEDENTES PERSONALES ( PATOLÓGICOS)" colspan="2"/>
 					   <group>
 						<field name="y_asma"/>
@@ -103,9 +103,10 @@
 						<field name="y_Luz"/>
 						<field name="y_agua"/>
 						<field name="y_desague"/>
-					      </group>	
+					      </group>
+					      <field name="x_medicamentos_uso_cont" colspan="4"/>
 				      </group>
-				      <field name="x_medicamentos_uso_cont"/>
+				      
 				</page>
 				<page string="FUNCIONES VITALES">
 					<label for="FUNCIONES VITALES"/>
