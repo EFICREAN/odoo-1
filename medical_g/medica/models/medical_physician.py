@@ -97,8 +97,8 @@ class MedicalPhysician(models.Model):
         'Related schedules'
     )
     #Doctor
-	x_nro_colegio = fields.Char(string='Nro Colegiatura:')
-	x_medico_detecta = fields.Selection([('SI','SI'),('NO','NO')], string='Medico de Detecta?')
+    x_nro_colegio = fields.Char(string='Nro Colegiatura:')
+    x_medico_detecta = fields.Selection([('SI','SI'),('NO','NO')], string='Médico de Detecta?')
 	
     _defaults = {'is_doctor': True, 'supplier': True, 'active': True, }
 
