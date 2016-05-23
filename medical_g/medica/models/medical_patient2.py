@@ -15,7 +15,7 @@ class medical_patient(models.Model):
 	x_alergias = fields.Selection([('SI','SI'),('NO','NO')],string='ALERGIAS:')
 	x_padres_vivos = fields.Selection([('SI','SI'),('NO','NO')],string='PADRES VIVOS:')
 	x_otros = fields.Selection([('SI','SI'),('NO','NO')],string='OTROS:')
-	x_especifique = fields.Char(string="ESPECIFIQUE")
+	x_especifique = fields.Text(string="ESPECIFIQUE")
 
 #Antecedentes Personales (Patologicos)
 	
@@ -34,7 +34,7 @@ class medical_patient(models.Model):
 	
 	y_parto = fields.Selection([('EUTOCICO','EUTOCICO'),('CESAREA','CESAREA')],string='PARTO:')
 	y_lactancia = fields.Selection([('MATERNA','MATERNA'),('MIXTA','MIXTA'),('FORMULA','FORMULA')],string='LACTANCIA:')
-	y_desarrollo = fields.Selection([('NORMAL','NORMAL'),('ANORMAL','ANORMAL'),('FORMULA','FORMULA')],string='DESARROLLO:')
+	y_desarrollo = fields.Selection([('NORMAL','NORMAL'),('ANORMAL','ANORMAL')],string='DESARROLLO:')
 	# ALIMENTACION BAJA, MODERADA, ALTA
 	
 	y_carbohidratos = fields.Selection([('BAJA','BAJA'),('MODERADA','MODERADA'),('ALTA','ALTA')],string='CARBOHIDRATOS:')
