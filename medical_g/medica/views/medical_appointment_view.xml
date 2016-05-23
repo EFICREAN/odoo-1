@@ -7,7 +7,7 @@
             <field name="priority" eval="8" />
             <field name="arch" type="xml">
                 <tree string="Medical Appointment" colors="grey:stage_id=='Canceled';green:stage_id=='Draft';blue:stage_id in ('Done');red:stage_id in ('Waiting','Unavailable')">
-                    <field name="name" />
+                    <field name="name"/>
                     <field name="patient_id" />
                        <field name="alias" />
                     <field name="appointment_date" />
