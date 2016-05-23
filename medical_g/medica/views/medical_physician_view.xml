@@ -25,16 +25,20 @@
                                options='{"preview_image": "image_medium", }'/>
                         <div class="oe_title">
                             <h1>
-                                <field name="name" placeholder="Physician's Name" />
+                                <field name="name" placeholder="Nombre del Doctor" />
                             </h1>
                             <h3> 
-                                <field name="company_id" placeholder="Company" /> 
+                                <field name="company_id" placeholder="Empresa" /> 
                             </h3> 
                         </div>
                         <group>
-                            <field name="ref" string="Legal ID"/>
-                            <field name="code" string="Internal ID"/>
-                            <field name="specialty_id"/>
+                            <field name="ref" string="DNI"/>
+                            <field name="code" string="Internal ID" invisible="1"/>
+                            <field name="x_nro_colegio"/>
+                            
+                            <field name="specialty_id" string="Especialidad:" />
+                            <field name="x_medico_detecta"/>
+                            
                             <field name="parent_id" />
                             <field name="info" colspan="4"/>
                         </group>
