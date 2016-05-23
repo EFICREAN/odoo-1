@@ -140,18 +140,18 @@
 				<field name="x_pediatrico"> attrs="{'invisible': [('x_adulto','=',True)]}</field>
 				<field name="x_adulto">  attrs="{'invisible': [('x_pediatrico','=',True)]}</field>
 				<field name="x_presion"></field>
-				<field name="X_frecuencia_card"></field>
-				<field name="X_peso"></field>
+				<field name="x_frecuencia_card"></field>
+				<field name="x_peso"></field>
 			   </group>
 			   <group>
-			   	<field name="X_respiracion"></field>
+			   	<field name="x_respiracion"></field>
 				<field name="x_glicenia_tipo"> invisible="1" </field>
 				<field name="x_glicenia_cant"> </field>
 				<field name="x_temp"></field>
 				<field name="x_temperatura"> attrs="{'invisible': [('x_temp','=','NO AFEBRIL')]}</field>
 				<field name="x_saturacion"></field>
-				<field name="X_escala_dolor"></field>
-				<field name="X_talla"></field>
+				<field name="x_escala_dolor"></field>
+				<field name="x_talla"></field>
 			   </group>
 			  </group>
 			</form>
