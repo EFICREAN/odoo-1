@@ -60,7 +60,7 @@
                                             </div>
                                             <field name="country_id" placeholder="Country" class="no_button" options='{"no_open": True}' />
                                         </div>
-                                        <field name="website" widget="url" placeholder="e.g. www.openerp.com"/>
+                                        <field name="website" widget="url" placeholder="e.g. www.openerp.com" invisible="1"/>
                                     </group>
                                     <group>
                                         <field name="phone" placeholder="e.g. +32.81.81.37.00"/>
