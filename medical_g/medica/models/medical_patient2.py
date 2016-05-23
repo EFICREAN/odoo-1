@@ -83,6 +83,8 @@ class medical_patient(models.Model):
 	x_nombre_madre = fields.Char(string='Nombre de la madre:')
 	x_apellido_madre = fields.Char(string='Apellido de la madre:')
 	x_otros = fields.Text(string = 'Otros :')
+	x_nro_colegio = fields.Char(string='Nro Colegiatura:')
+	x_medico_detecta = fields.Selection([('SI','SI'),('NO','NO')], string='Medico de Detecta?')
 #Afiliación
 	#Detalle_por_hijo = fields.One2many('open_cliente.hijos','hijo_id', String="Detalle por hijo")
 	x_id_funciones_vitales = fields.One2many('funciones.vitales','id2_funciones_vitales',string="Funciones Vitales")
