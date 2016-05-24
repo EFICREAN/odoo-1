@@ -13,7 +13,8 @@ class res_partner(models.Model):
 	x_dni_padre = fields.Char(string="DNI del Padre")
 	x_movil_padre = fields.Char(string="Movil del Padre")
 	x_nivel = fields.Selection([('INICIAL','INICIAL'),('PRIMARIA','PRIMARIA'),('SECUNDARIA','SECUNDARIA')],string="Nivel estudio")
-class account_invoice(models.Model):
+	
+class account_invoice2(models.Model):
 	_name = "account.invoice"
 	_inherit = "account.invoice"
 	x_dni_p = fields.Char(related='partner_id.x_dni_padre',store=True,string="Dni padre:")
