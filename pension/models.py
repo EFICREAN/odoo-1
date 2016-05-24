@@ -17,8 +17,9 @@ class res_partner(models.Model):
 class account_invoice2(models.Model):
 	_name = "account.invoice"
 	_inherit = "account.invoice"
-	x_dni_p = fields.Many2one('res.partner', string='Dni padre:', 
-	related='partner_id.x_dni_padre', store=True,  readonly=True)
+	x_dni_p = fields.Many2one('res.partner', 'x_dni_padre', store=True,  readonly=True, string='Dni padre:')
+	
+	#comment = fields.Many2one('res.partner','Comment',compute='_compute_com')
 	
 	#commercial_partner_id = fields.Many2one('res.partner', string='Commercial Entity',
         #related='partner_id.commercial_partner_id', store=True, readonly=True,
