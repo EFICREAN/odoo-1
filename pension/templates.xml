@@ -20,6 +20,7 @@
 			</field>
 		</field>
 	</record>
+<!--
 	<record model='ir.ui.view' id='account_invoice_view2'>
 		<field name='name'>account.invoice.view2</field>
 		<field name='model'>account.invoice</field>
@@ -31,5 +32,6 @@
 			</field>
 		</field>
 	</record>
+-->
     </data>
 </openerp>
