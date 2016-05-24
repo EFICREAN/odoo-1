@@ -17,8 +17,11 @@ class res_partner(models.Model):
 class account_invoice2(models.Model):
 	_name = "account.invoice"
 	_inherit = "account.invoice"
-	x_dni_p = fields.Char(string='Dni padre:', store=True, related='partner_id.name')
+	x_dni_p = fields.Many2one('res.partner', string='Dni padre:', 
+	related='partner_id.x_dni_padre', store=True,  readonly=True)
 	
-
-#
+	#commercial_partner_id = fields.Many2one('res.partner', string='Commercial Entity',
+        #related='partner_id.commercial_partner_id', store=True, readonly=True,
+        #help="The commercial entity that will be used on Journal Entries for this invoice")
+	
 	
