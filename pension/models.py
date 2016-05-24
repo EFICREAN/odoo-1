@@ -17,7 +17,7 @@ class res_partner(models.Model):
 class account_invoice2(models.Model):
 	_name = "account.invoice"
 	_inherit = "account.invoice"
-	x_dni_p = fields.Char(related='partner_id.x_dni_padre',store=True,string="Dni padre:")
+	x_dni_p = fields.Char(string='Dni padre:', store=True, related='partner_id.name')
 	
 
 #
