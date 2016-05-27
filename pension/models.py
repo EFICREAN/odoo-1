@@ -22,7 +22,7 @@ class account_invoice2(models.Model):
 	#partner_id2 = fields.One2many('res.partner','ids_account')
 	
 	def loaddni(self):
-		for load_dni in self.partner_id
+		for load_dni in self.partner_id:
         	    return load_dni.name
 
     	x_dni_padre2 = fields.Char(default=loaddni, string="dni padre") 
