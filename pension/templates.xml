@@ -20,7 +20,7 @@
 			</field>
 		</field>
 	</record>
-<!--
+	
 	<record model='ir.ui.view' id='account_invoice_view2'>
 		<field name='name'>account.invoice.view2</field>
 		<field name='model'>account.invoice</field>
@@ -28,10 +28,10 @@
 		<field name='type'>form</field>
 		<field name='arch' type='xml'>
 			<field name="partner_id" position="after" >
-				<field name="x_dni_p"/>
+				<field name="x_dni_padre2"/>
 			</field>
 		</field>
 	</record>
--->
+
     </data>
 </openerp>
