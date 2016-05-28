@@ -28,7 +28,7 @@
 		<field name='type'>form</field>
 		<field name='arch' type='xml'>
 			<field name="partner_id" position="after" >
-				<field name="x_dni_padre2"/>
+				<field name="x_dni_padre3"/>
 			</field>
 		</field>
 	</record>
