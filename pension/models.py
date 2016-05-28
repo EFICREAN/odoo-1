@@ -15,17 +15,27 @@ class res_partner(models.Model):
 	x_nivel = fields.Selection([('INICIAL','INICIAL'),('PRIMARIA','PRIMARIA'),('SECUNDARIA','SECUNDARIA')],string="Nivel estudio")
 	#ids_account = fields.Many2one('account.invoice')
 	
-class account_invoice2(models.Model):
-	_name = "account.invoice"
-	_inherit = "account.invoice"
+class custom_saleorder_fields(osv.osv):
+    _inherits = 'account.invoice'
+
+    _columns = {
+        'x_dni_padre2': fields.related('partner_id','x_dni_padre',type="char",relation="res.partner",string="dni padre",store=True,readonly=True),
+    }
+custom_saleorder_fields()	
+	
+	
+#class account_invoice2(models.Model):
+#	_name = "account.invoice"
+#	_inherit = "account.invoice"
 
 	#partner_id2 = fields.One2many('res.partner','ids_account')
 	
-	def loaddni(self):
-		for load_dni in self.partner_id:
-        	    return load_dni.x_dni_padre
+#	def loaddni(self):
+#		for load_dni in self.partner_id:
+ #       	    return load_dni.x_dni_padre
+        	    
 
-    	x_dni_padre2 = fields.Char(default=loaddni, string="dni padre") 
+  #  	x_dni_padre2 = fields.Char(default=loaddni, string="dni padre") 
 	
 	
 #	x_dni_p = fields.Char(string='Dni padre:')
