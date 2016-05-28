@@ -16,14 +16,14 @@ class res_partner(models.Model):
 	x_nivel = fields.Selection([('INICIAL','INICIAL'),('PRIMARIA','PRIMARIA'),('SECUNDARIA','SECUNDARIA')],string="Nivel estudio")
 	#ids_account = fields.Many2one('account.invoice')
 	
-class custom_saleorder_fields(osv.osv):
+class custom_account(osv.osv):
     _inherits = 'account.invoice'
 
     _columns = {
         'x_dni_padre2': fields.related('partner_id','x_dni_padre',type="char",relation="res.partner",string="dni padre",store=True,readonly=True),
-    	'x_dni_padre3 : fields.many2one('res.partner.x_dni_padre', 'Dni del padre2')
+    	'x_dni_padre3' : fields.many2one('res.partner.x_dni_padre', 'Dni del padre2')
     }
-custom_saleorder_fields()	
+custom_account()	
 	
 	
 #class account_invoice2(models.Model):
