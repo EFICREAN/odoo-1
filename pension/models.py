@@ -20,8 +20,8 @@ class custom_account(osv.osv):
     _inherits = 'account.invoice'
 
     _columns = {
-        'x_dni_padre2': fields.related('partner_id','x_dni_padre',type="char",relation="res.partner",string="dni padre",store=True,readonly=True),
-    	'x_dni_padre3' : fields.many2one('res.partner.x_dni_padre', 'Dni del padre2')
+       # 'x_dni_padre2': fields.related('partner_id','x_dni_padre',type="char",relation="res.partner",string="dni padre",store=True,readonly=True),
+    	'x_dni_padre3': fields.many2one('res.partner.x_dni_padre', 'Dni del padre2')
     }
 custom_account()	
 	
