@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from openerp import models, fields, api
+from openerp.osv import osv
 
 class res_partner(models.Model):
 	_name = "res.partner"
