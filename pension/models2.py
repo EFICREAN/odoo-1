@@ -3,7 +3,7 @@
 from openerp import models, fields, api
 from openerp.osv import osv
 
-class custom_account(Models.model):
+class custom_account(models.Model):
     _inherits = 'account.invoice'
     
 x_dni2 = fields.Char(string="Dni padre")
