@@ -4,8 +4,8 @@ from openerp import models, fields, api
 
 
 class custom_account(models.Model):
-    	_name = "account.invoice"
-    	_inherit = "account.invoice"
+    	_name = "account.voucher"
+    	_inherit = "account.voucher"
     
 	x_grado1 = fields.Char(string='Grado:')
 	x_seccion1 = fields.Char(string='Sección:')
