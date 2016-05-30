@@ -10,7 +10,7 @@ class custom_account(models.Model):
 	x_dni2 = fields.Char(string="Dni padre")
 
 	@api.onchange("partner_id")
-	def onchange_partner_id2(self):
+	def _onchange_partner_id2(self):
 		if partner_id:
             		p = self.env['res.partner'].browse(partner_id)
             		self.x_dni2 = p.x_dni_padre
