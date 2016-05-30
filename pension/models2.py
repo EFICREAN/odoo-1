@@ -10,6 +10,14 @@ class custom_account(models.Model):
 	x_grado1 = fields.Char(string='Grado:')
 	x_seccion1 = fields.Char(string='Sección:')
 	x_nivel = fields.Selection([('INICIAL','INICIAL'),('PRIMARIA','PRIMARIA'),('SECUNDARIA','SECUNDARIA')],string="Nivel estudio")
+
+class custom_account(models.Model):
+    	_name = "account.voucher"
+    	_inherit = "account.voucher"
+    
+	x_grado1 = fields.Char(string='Grado:')
+	x_seccion1 = fields.Char(string='Sección:')
+	x_nivel = fields.Selection([('INICIAL','INICIAL'),('PRIMARIA','PRIMARIA'),('SECUNDARIA','SECUNDARIA')],string="Nivel estudio")
 	
 	#@api.onchange("partner_id")
 	#def _onchange_partner_id2(self):
