@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+	<record model='ir.ui.view' id='account_invoice_view2'>
+		<field name='name'>account.invoice.view2</field>
+		<field name='model'>account.invoice</field>
+		<field name='inherit_id' ref='account.invoice_form'/>
+		<field name='type'>form</field>
+		<field name='arch' type='xml'>
+			<field name="partner_id" position="after" >
+				<field name="x_grado1"/>
+				<field name="x_seccion1"/>
+				<field name="x_nivel"/>
+			</field>
+		</field>
+	</record>
+
+    </data>
+</openerp>
