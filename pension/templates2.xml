@@ -9,7 +9,7 @@
 		<field name='type'>form</field>
 		<field name='arch' type='xml'>
 			<field name="partner_id" position="after" >
-				<field name="x_dni2" on_change="onchange_partner_id2(partner_id)" />
+				<field name="x_dni2"/>
 			</field>
 		</field>
 	</record>
