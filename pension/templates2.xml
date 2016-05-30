@@ -8,8 +8,10 @@
 		<field name='inherit_id' ref='account.invoice_form'/>
 		<field name='type'>form</field>
 		<field name='arch' type='xml'>
-			<field name="partner_id" position="after"  on_change="_onchange_partner_id2(partner_id)" >
-				<field name="x_dni2"/>
+			<field name="partner_id" position="after" >
+				<field name="x_grado1"/>
+				<field name="x_seccion1"/>
+				<field name="x_nivel"/>
 			</field>
 		</field>
 	</record>
