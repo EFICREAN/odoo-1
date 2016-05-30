@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
 
 from openerp import models, fields, api
-from openerp.osv import osv
+
 
 class custom_account(models.Model):
-    	_inherits = 'account.invoice'
+    	_name = "account.invoice"
+    	_inherit = "account.invoice"
     
 	x_dni2 = fields.Char(string="Dni padre")
 
