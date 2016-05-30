@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
 from openerp import models, fields, api
-from openerp.osv import osv
 
-class res_partner(models.Model):
+class res_partner2(models.Model):
+	_name = "res.partner"
 	_inherit = "res.partner"
 	x_nrodoc = fields.Char(string='DNI del alumno:')
 	x_edad   = fields.Integer(string='Edad:')
