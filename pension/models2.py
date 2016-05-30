@@ -11,6 +11,8 @@ class custom_account(models.Model):
 
 	@api.onchange("partner_id")
 	def _onchange_partner_id2(self):
-		p = self.env['res.partner'].browse(partner_id)
-		self.x_dni2 = p.x_dni_padre
-	
+		p = self.env['res.partner'].search([('partner_id', '=', partner_id)])
+		for pp in p:
+			if pp['x_dni_padre']:
+				self.x_dni2 = p.x_dni_padre
+				print('dni padre : %s',sefl.x_dni2)
