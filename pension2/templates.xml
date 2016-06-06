@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+	<record model='ir.ui.view' id='res_partner_academic'>
+		<field name='name'>res_partner_academic</field>
+		<field name='model'>res.partner</field>
+		<field name='inherit_id' ref='base.view_partner_form'/>
+		<field name='type'>form</field>
+		<field name='arch' type='xml'>
+			<field name="street" position="after" >
+				<field name="nrodoc"/>
+				<field name="edad"/>
+				<field name="grado"/>
+				<field name="seccion"/>
+				<field name="nombre_padre"/>
+				<field name="dni_padre"/>
+				<field name="movil_padre"/>
+				<field name="nivel_est"/>
+			</field>
+		</field>
+	</record>
+    </data>
+</openerp>
