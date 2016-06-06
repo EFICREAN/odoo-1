@@ -8,15 +8,15 @@
 		<field name='inherit_id' ref='base.view_partner_form'/>
 		<field name='type'>form</field>
 		<field name='arch' type='xml'>
-			<field name="website" position="before" >
-				<field name="x_nrodoc"/>
-				<field name="x_edad"/>
-				<field name="x_grado1"/>
-				<field name="x_seccion1"/>
-				<field name="x_nombre_padre"/>
-				<field name="x_dni_padre"/>
-				<field name="x_movil_padre"/>
-				<field name="x_nivel"/>
+			<field name="street" position="after" >
+				<field name="nrodoc"/>
+				<field name="edad"/>
+				<field name="grado"/>
+				<field name="seccion"/>
+				<field name="nombre_padre"/>
+				<field name="dni_padre"/>
+				<field name="movil_padre"/>
+				<field name="nivel_est"/>
 			</field>
 		</field>
 	</record>
