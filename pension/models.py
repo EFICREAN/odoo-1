@@ -10,7 +10,7 @@ class res_partner2(models.Model):
 	grado = fields.Char(string='Grado:')
 	seccion = fields.Char(string='Sección:')
 	nombre_padre = fields.Char(string="Nombre Padre / Tutor")
-	dni_padre = fields.Integer(string="DNI del Padre")
+	dni_padre = fields.Char(string="DNI del Padre")
 	movil_padre = fields.Char(string="Movil del Padre")
 	nivel_est = fields.Selection([('INICIAL','INICIAL'),('PRIMARIA','PRIMARIA'),('SECUNDARIA','SECUNDARIA')],string="Nivel estudio")
 	#ids_account = fields.Many2one('account.invoice')
