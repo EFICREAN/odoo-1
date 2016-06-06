@@ -9,9 +9,9 @@
 		<field name='type'>form</field>
 		<field name='arch' type='xml'>
 			<field name="partner_id" position="after" >
-				<field name="x_grado1"/>
-				<field name="x_seccion1"/>
-				<field name="x_nivel"/>
+				<field name="grado"/>
+				<field name="seccion"/>
+				<field name="nivel_est"/>
 			</field>
 		</field>
 	</record>
@@ -22,9 +22,9 @@
 		<field name='type'>form</field>
 		<field name='arch' type='xml'>
 			<field name="partner_id" position="after" >
-				<field name="x_grado1"/>
-				<field name="x_seccion1"/>
-				<field name="x_nivel"/>
+				<field name="grado"/>
+				<field name="seccion"/>
+				<field name="nivel_est"/>
 			</field>
 		</field>
 	</record>
