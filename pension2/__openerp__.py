@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "pension",
+    'name': "pension2",
 
     'summary': "Modulos para fines educativos",
 
@@ -21,7 +21,7 @@
     # always loaded
     'data': [
         # 'security/ir.model.access.csv',
-        'templates.xml',
+        'templates2.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
