@@ -16,7 +16,7 @@ class res_partner2(models.Model):
 	#ids_account = fields.Many2one('account.invoice')
 	
   	@api.onchange('nrodoc')
-    	def _verify_valid_fields(self):
+    	def _verify_valid_nrodoc(self):
     		var_nrodoc = self.nrodoc
     		if len(var_nrodoc)=0:
     	  		var_nrodoc="1"
@@ -28,8 +28,9 @@ class res_partner2(models.Model):
                     		'message': "Es menor a 8 dígitos o no es númerico",
                 		},
             		}
+            		
         @api.onchange('dni_padre')
-    	def _verify_valid_fields(self):
+    	def _verify_valid_dnipadre(self):
     	  	var_dni_padre = self.dni_padre
     	  	if len(var_dni_padre)=0:
     	  		var_dni_padre="1"
