@@ -15,21 +15,30 @@ class res_partner2(models.Model):
 	nivel_est = fields.Selection([('INICIAL','INICIAL'),('PRIMARIA','PRIMARIA'),('SECUNDARIA','SECUNDARIA')],string="Nivel estudio")
 	#ids_account = fields.Many2one('account.invoice')
 	
-  	@api.onchange('nrodoc','dni_padre')
+  	@api.onchange('nrodoc')
     	def _verify_valid_fields(self):
     		var_nrodoc = self.nrodoc
-    		var_dni_padre = self.dni_padre
-        	if not var_nrodoc.isdigit() or not (len(var_nrodoc)==8):
+    		if len(var_nrodoc)=0:
+    	  		var_nrodoc="1"
+    	  	
+    		if not var_nrodoc.isdigit() or not (len(var_nrodoc)==8):
             		return {
                 		'warning': {
                     		'title': "Incorrect DNI value",
                     		'message': "Es menor a 8 dígitos o no es númerico",
                 		},
             		}
-            	if not var_dni_padre.isdigit() or not (len(var_dni_padre)==8):
+        @api.onchange('dni_padre')
+    	def _verify_valid_fields(self):
+    	  	var_dni_padre = self.dni_padre
+    	  	if len(var_dni_padre)=0:
+    	  		var_dni_padre="1"
+    	  	
+    		if not var_dni_padre.isdigit() or not (len(var_dni_padre)==8):
             		return {
                 		'warning': {
                     		'title': "Incorrect DNI value",
                     		'message': "Es menor a 8 dígitos o no es númerico",
                 		},
             		}
+            	
