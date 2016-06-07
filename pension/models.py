@@ -17,7 +17,8 @@ class res_partner2(models.Model):
 	
   	@api.onchange('nrodoc')
     	def _verify_valid_fields(self):
-        	if not self.nrodoc.isdigit() or not (len(self.nrodoc)==8):
+    		var_nrodoc = self.nrodoc	
+        	if not var_nrodoc.isdigit() or not (len(var_nrodoc)==8):
             		return {
                 		'warning': {
                     		'title': "Incorrect DNI value",
