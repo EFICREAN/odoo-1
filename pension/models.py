@@ -38,5 +38,5 @@ class res_partner2(models.Model):
 	@api.one
         @api.constrains('edad')
     	def _check_edad(self):
-    		if edad==0:
+    		if self.edad==0:
             		raise ValidationError("Error Edad")
