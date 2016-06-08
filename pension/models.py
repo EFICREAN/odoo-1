@@ -14,6 +14,7 @@ class res_partner2(models.Model):
 	dni_padre = fields.Char(string="DNI del Padre",required=True)
 	movil_padre = fields.Char(string="Movil del Padre")
 	nivel_est = fields.Selection([('INICIAL','INICIAL'),('PRIMARIA','PRIMARIA'),('SECUNDARIA','SECUNDARIA')],required=True,string="Nivel estudio")
+	mobile = fields.Char(string="movil",related="movil_padre")
 	#ids_account = fields.Many2one('account.invoice')
 	
 	@api.one
@@ -33,3 +34,9 @@ class res_partner2(models.Model):
     	  		var_dni_padre="1"
     		if not var_dni_padre.isdigit() or not (len(var_dni_padre)==8):
             		raise ValidationError("Error ingreso DNI padre")	
+
+	@api.one
+        @api.constrains('edad')
+    	def _check_edad(self):
+    		if edad==0:
+            		raise ValidationError("Error Edad")
