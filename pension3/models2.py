@@ -9,7 +9,7 @@ class res_partner1(models.Model):
     	_inherit = "res.partner"
     
     	@api.one
-	@api.constraints('nrodoc','dni_padre')
+	@api.constrains('nrodoc','dni_padre')
 	def _check_unique_constraint(self):
         	if len(self.search(['nrodoc', '=', self.nrodoc])) > 1:
                 	raise ValidationError("DNI del Alumno existe debe ser único")
