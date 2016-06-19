@@ -11,8 +11,8 @@ class res_partner1(models.Model):
     	@api.one
 	@api.constrains('nrodoc', 'dni_padre')
 	def _check_dni(self):
-    	if self.nrodoc == self.dni_padre:
-        	raise ValidationError("DNI alumno/padre deben ser únicos")
+    		if self.nrodoc == self.dni_padre:
+        		raise ValidationError("DNI alumno/padre deben ser únicos")
     	
     	_sql_constraints = [
         	('nrodoc_unique',
