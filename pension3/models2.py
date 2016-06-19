@@ -9,6 +9,9 @@ class res_partner1(models.Model):
     	_inherit = "res.partner"
     
     	_sql_constraints = [
+        	('nrodoc_dni_padre_check',
+        	'CHECK(nrodoc != dni_padre)',
+         	"DNI alumno/padre deben ser únicos"),
         	('nrodoc_unique',
          	'UNIQUE(nrodoc)',
          	"DNI del alumno debe ser único"),
