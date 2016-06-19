@@ -13,7 +13,7 @@ class res_partner1(models.Model):
          	'UNIQUE(nrodoc)',
          	"DNI del alumno debe ser único"),
          	('dni_padre_unique',
-         	'UNIQUE(dni_padre),
+         	'UNIQUE(dni_padre)',
          	"DNI del padre debe ser único"),
     	]
     	
