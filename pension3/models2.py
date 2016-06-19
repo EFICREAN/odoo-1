@@ -9,9 +9,9 @@ class res_partner1(models.Model):
     	_inherit = "res.partner"
     
     	 _sql_constraints = [
-        ('nrodoc_unique',
-         'UNIQUE(nrodoc)',
-         "DNI del alumno debe ser único")
+        	('nrodoc_unique',
+         	'UNIQUE(nrodoc)',
+         	"DNI del alumno debe ser único"),
     	]
     	
     	#@api.one
