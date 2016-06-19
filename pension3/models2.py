@@ -8,7 +8,7 @@ class res_partner1(models.Model):
     	_name = "res.partner"
     	_inherit = "res.partner"
     
-    	 _sql_constraints = [
+    	_sql_constraints = [
         	('nrodoc_unique',
          	'UNIQUE(nrodoc)',
          	"DNI del alumno debe ser único"),
