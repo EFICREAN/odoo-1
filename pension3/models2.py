@@ -7,11 +7,14 @@ from openerp.exceptions import ValidationError
 class res_partner1(models.Model):
     	_name = "res.partner"
     	_inherit = "res.partner"
-    
+    	
+    	@api.one
+	@api.constrains('nrodoc', 'dni_padre')
+	def _check_dni(self):
+    	if self.nrodoc == self.dni_padre:
+        	raise ValidationError("DNI alumno/padre deben ser únicos")
+    	
     	_sql_constraints = [
-        	('nrodoc_dni_padre_check',
-        	'CHECK(nrodoc != dni_padre)',
-         	"DNI alumno/padre deben ser únicos"),
         	('nrodoc_unique',
          	'UNIQUE(nrodoc)',
          	"DNI del alumno debe ser único"),
