@@ -12,6 +12,9 @@ class res_partner1(models.Model):
         	('nrodoc_unique',
          	'UNIQUE(nrodoc)',
          	"DNI del alumno debe ser único"),
+         	('dni_padre_unique',
+         	'UNIQUE(dni_padre),
+         	"DNI del padre debe ser único"),
     	]
     	
     	#@api.one
