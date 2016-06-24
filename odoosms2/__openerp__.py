@@ -20,14 +20,14 @@
 
     # always loaded
     'data': [
-        "security/groups.xml",
-        "security/ir.model.access.csv"
+    #    "security/groups.xml",
+    #    "security/ir.model.access.csv"
     ],
     # only loaded in demonstration mode
     'demo': [
         'demo.xml',
     ],
-    'installable' : False,
+    'installable' : True,
     'application' : True,
     'auto_install': False,
 }
