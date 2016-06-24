@@ -20,7 +20,7 @@
 
     # always loaded
     'data': [
-    #    "security/groups.xml",
+         "template2.xml",
     #    "security/ir.model.access.csv"
     ],
     # only loaded in demonstration mode
