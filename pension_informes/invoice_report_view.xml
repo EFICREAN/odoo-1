@@ -1,90 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openerp>
 <data>
-    <record id="view_order_product_graph1" model="ir.ui.view">
-         <field name="name">sale.report.graph1</field>
-         <field name="model">sale.report</field>
+    <record id="view_account_invoice_report_graph1" model="ir.ui.view">
+         <field name="name">account.invoice.report.graph1</field>
+         <field name="model">account.invoice.report</field>
          <field name="arch" type="xml">
-             <graph string="Sales Analysis1" type="pivot" stacked="True">
-                 <field name="section_id" type="row"/>
-                 <field name="date" interval="month" type="col"/>
+             <graph string="Invoices Analysis1" type="pivot">
+                 <field name="categ_id" type="row"/>
+                 <field name="period_id" type="col"/>
                  <field name="price_total" type="measure"/>
              </graph>
          </field>
     </record>
 
     <!-- Custom reports (aka filters) -->
-    <record id="filter_sale_report_sales_funnel1" model="ir.filters">
-        <field name="name">Sales Funnel1</field>
-        <field name="model_id">sale.report</field>
-        <field name="domain">['&amp;', ('date','&lt;=', time.strftime('%%Y-12-31')), '&amp;', ('date','&gt;=',time.strftime('%%Y-01-01')), '|', ('state','in',('draft','sent')), ('state','not in',('draft','sent','cancel'))]</field>
-        <field name="user_id" eval="False"/>
-        <field name="context">{'group_by': ['state'], 'measures': ['price_total']}</field>
-    </record>
-    <record id="filter_sale_report_salespersons1" model="ir.filters">
-        <field name="name">By Salespersons1</field>
-        <field name="model_id">sale.report</field>
+    <record id="filter_invoice_salespersons1" model="ir.filters">
+        <field name="name">By Salespersons</field>
+        <field name="model_id">account.invoice.report</field>
+        <field name="domain">[]</field>
         <field name="user_id" eval="False"/>
         <field name="context">{'group_by': ['date:month', 'user_id']}</field>
     </record>
-    <record id="filter_sale_report_salesteam1" model="ir.filters">
-        <field name="name">By Salesteam1</field>
-        <field name="model_id">sale.report</field>
+    <record id="filter_invoice_product1" model="ir.filters">
+        <field name="name">By Product</field>
+        <field name="model_id">account.invoice.report</field>
+        <field name="domain">[]</field>
         <field name="user_id" eval="False"/>
-        <field name="context">{'group_by': ['date:month', 'section_id']}</field>
+        <field name="context">{'group_by': ['date:month', 'product_id'], 'set_visible':True, 'residual_invisible':True}</field>
     </record>
-    <record id="filter_isale_report_product1" model="ir.filters">
-        <field name="name">By Product1</field>
-        <field name="model_id">sale.report</field>
+    <record id="filter_invoice_product_category1" model="ir.filters">
+        <field name="name">By Product Category</field>
+        <field name="model_id">account.invoice.report</field>
+        <field name="domain">[]</field>
         <field name="user_id" eval="False"/>
-        <field name="context">{'group_by': ['date:month', 'product_id']}</field>
+        <field name="context">{'group_by': ['date:month', 'categ_id'], 'residual_invisible':True}</field>
+    </record>
+    <record id="filter_invoice_refund1" model="ir.filters">
+        <field name="name">By Refund</field>
+        <field name="model_id">account.invoice.report</field>
+        <field name="domain">[('type', '=', 'out_refund')]</field>
+        <field name="user_id" eval="False"/>
+        <field name="context">{'group_by': ['date:month', 'user_id']}</field>
+    </record>
+    <record id="filter_invoice_country1" model="ir.filters">
+        <field name="name">By Country</field>
+        <field name="model_id">account.invoice.report</field>
+        <field name="domain">[]</field>
+        <field name="user_id" eval="False"/>
+        <field name="context">{'group_by': ['date:month', 'country_id']}</field>
     </record>
 
-    <record id="view_order_product_search1" model="ir.ui.view">
-        <field name="name">sale.report.search1</field>
-        <field name="model">sale.report</field>
+    <record id="view_account_invoice_report_search1" model="ir.ui.view">
+        <field name="name">account.invoice.report.search1</field>
+        <field name="model">account.invoice.report</field>
         <field name="arch" type="xml">
-            <search string="Sales Analysis">
+            <search string="Invoices Analysis1">
                 <field name="date"/>
-                <field name="date_confirm"/>
-                <filter string="This Year" name="year" invisible="1" domain="[('date','&lt;=', time.strftime('%%Y-12-31')),('date','&gt;=',time.strftime('%%Y-01-01'))]"/>
-                <filter name="Quotations" domain="[('state','in',('draft','sent'))]"/>
-                <filter name="Sales" string="Sales" domain="[('state','not in',('draft','sent','cancel'))]"/>
+                <filter string="This Year" name="thisyear" domain="['|', ('date', '=', False), '&amp;',('date','&lt;=', time.strftime('%%Y-12-31')),('date','&gt;=',time.strftime('%%Y-01-01'))]" help="Journal invoices with period in current year"/>
                 <separator/>
-                <filter string="My Sales" help="My Sales" domain="[('user_id','=',uid)]"/>
-                <field name="partner_id"/>
-                <field name="product_id"/>
-                <field name="user_id"/>
-                <group expand="0" string="Extended Filters">
-                    <field name="categ_id"/>
-                    <field name="company_id" groups="base.group_multi_company"/>
-                </group>
+                <filter string="To Invoice" domain="[('state','=','draft')]" help = "Draft Invoices"/>
+                <filter string="Pro-forma" domain="['|', ('state','=','proforma'),('state','=','proforma2')]"/>
+                <filter string="Invoiced" name="current" domain="[('state','not in', ('draft','cancel','proforma','proforma2'))]"/>
+                <separator/>
+                <filter string="Customer" name="customer" domain="['|', ('type','=','out_invoice'),('type','=','out_refund')]"/>
+                <filter string="Supplier" domain="['|', ('type','=','in_invoice'),('type','=','in_refund')]"/>
+                <separator/>
+                <filter string="Invoice" domain="['|', ('type','=','out_invoice'),('type','=','in_invoice')]"/>
+                <filter string="Refund" domain="['|', ('type','=','out_refund'),('type','=','in_refund')]"/>
+                <field name="partner_id" operator="child_of"/>
+                <field name="user_id" />
+                <field name="categ_id" filter_domain="[('categ_id', 'child_of', self)]"/>
                 <group expand="1" string="Group By">
-                    <filter string="Salesperson" name="User" context="{'group_by':'user_id'}"/>
-                    <filter string="Sales Team" context="{'group_by':'section_id'}" groups="base.group_multi_salesteams"/>
-                    <filter string="Customer" name="Customer" context="{'group_by':'partner_id'}"/>
-                    <filter string="Category of Product" name="Category" context="{'group_by':'categ_id'}"/>
+                    <filter string="Partner" name="partner_id" context="{'group_by':'partner_id','residual_visible':True}"/>
+                    <filter string="Salesperson" name='user' context="{'group_by':'user_id'}"/>
+                    <filter string="Category of Product" name="category_product" context="{'group_by':'categ_id','residual_invisible':True}"/>
                     <filter string="Status" context="{'group_by':'state'}"/>
-                    <filter string="Company" groups="base.group_multi_company" context="{'group_by':'company_id'}"/>
-                    <separator/>
-                    <filter string="Order Month" context="{'group_by':'date:month'}" help="Ordered date of the sales order"/>
+                    <filter string="Company" context="{'group_by':'company_id'}" groups="base.group_multi_company"/>
+                    <separator orientation="vertical" />
+                    <filter string="Period" context="{'group_by':'period_id'}"/>
+                    <filter string="Due Month" context="{'group_by':'date_due:month'}"/>
                 </group>
             </search>
         </field>
     </record>
 
-    <record id="action_order_report_all1" model="ir.actions.act_window">
-        <field name="name">Analisis de ventas</field>
-        <field name="res_model">sale.report</field>
+    <record id="action_account_invoice_report_all1" model="ir.actions.act_window">
+        <field name="name">Analisis Facturas</field>
+        <field name="res_model">account.invoice.report</field>
         <field name="view_type">form</field>
         <field name="view_mode">graph</field>
-        <field name="search_view_id" ref="view_order_product_search1"/>
-        <field name="view_id" ref="view_order_product_graph1"/>
-        <field name="context">{'search_default_Sales':1, 'group_by_no_leaf':1,'group_by':[]}</field>
-        <field name="help">This report performs analysis on your quotations and sales orders. Analysis check your sales revenues and sort it by different group criteria (salesman, partner, product, etc.) Use this report to perform analysis on sales not having invoiced yet. If you want to analyse your turnover, you should use the Invoice Analysis report in the Accounting application.</field>
+        <field name="context">{'search_default_current':1, 'search_default_customer':1, 'group_by':[], 'group_by_no_leaf':1, 'search_default_year': 1}</field>
+        <field name="search_view_id" ref="view_account_invoice_report_search1"/>
+        <field name="help">From this report, you can have an overview of the amount invoiced to your customer. The tool search can also be used to personalise your Invoices reports and so, match this analysis to your needs.</field>
+
     </record>
 
-    <menuitem action="action_order_report_all1" id="menu_report_product_all1" parent="base.next_id_64" sequence="10"/>
+    <menuitem action="action_account_invoice_report_all1" id="menu_action_account_invoice_report_all1" parent="account.menu_finance_reporting" sequence="0"/>
+
+    <act_window
+        id="act_account_invoice_partner_relation1"
+        name="Monthly Turnover"
+        groups="group_account_manager"
+        context="{'search_default_partner_id':[active_id], 'search_default_month':1,'search_default_user':1,'group_by_no_leaf':1,'group_by':[]}"
+        res_model="account.invoice.report"
+        src_model="res.partner"
+        view_mode="graph"/>
 
 </data>
 </openerp>
