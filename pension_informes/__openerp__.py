@@ -21,7 +21,8 @@
     # always loaded
     'data': [
         # 'security/ir.model.access.csv',
-        'templates2.xml',
+        'sale_report_view.xml',
+        'invoice_report_view.xml'
     ],
     # only loaded in demonstration mode
     'demo': [
