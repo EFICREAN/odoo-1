@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "pension3",
+    'name': "pension informes",
 
     'summary': "Modulos para fines educativos",
 
