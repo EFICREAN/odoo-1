@@ -94,8 +94,9 @@
         <field name="help">From this report, you can have an overview of the amount invoiced to your customer. The tool search can also be used to personalise your Invoices reports and so, match this analysis to your needs.</field>
 
     </record>
+#base.menu_reporting_dashboard en vez del  account.menu_finance_reporting
 
-    <menuitem action="action_account_invoice_report_all1" id="menu_action_account_invoice_report_all1" parent="account.menu_finance_reporting" sequence="0"/>
+    <menuitem action="action_account_invoice_report_all1" id="menu_action_account_invoice_report_all1" parent="base.menu_reporting_dashboard" sequence="0"/>
 
     <act_window
         id="act_account_invoice_partner_relation1"
