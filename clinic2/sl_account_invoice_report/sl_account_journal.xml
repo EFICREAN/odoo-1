@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+    <!--
+    <record id="action_print_invoice" model="ir.actions.client">
+        <field name="name">Button Action</field>
+        <field name="tag">print_action_invoice</field>
+        <field name="context">{'invoice_ids': [active_id]}</field>
+    </record>
+    -->
+    <record id="invoice_journal2" model="ir.ui.view">
+        <field name="name">account.journal.form2</field>
+        <field name="model">account.journal</field>
+        <field name="inherit_id" ref="account.view_account_journal_form"/>
+        <field name="arch" type="xml">
+              <field name="type" position="after">
+                     <field name="boleta_invoice" />
+              </field>
+        </field>
+    </record>
+
+</data>
+</openerp>

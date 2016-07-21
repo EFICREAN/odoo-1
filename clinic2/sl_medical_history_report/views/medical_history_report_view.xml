@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+       <template id="report_medical_history_view">
+            <t t-call="report.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <t t-call="report.external_layout">
+                        <div class="page">
+                            <div class="oe_structure"/>
+                            <div class="row">
+                                <div class="col-xs-4">
+                                        <small>+51(01) 226-807551 | +51(01) 226-1247</small>
+                                        <h6>www.detecta.pe</h6>
+                                </div>
+                                <div class="col-xs-6">
+                                    <p class="text-center"><h3>HISTORIA MÉDICA</h3></p>
+                                </div>
+                            </div>
+                            <br>
+                                <p> </p>
+                            </br>
+                            <br>
+                                <p> </p>
+                            </br>
+
+                            <table class="table table-bordered">
+                                <tr>
+                                    <td class="text-center"><h4>(1) Antecedentes familiares (papá,mamá ó hermanos) sufre o ha sufrido de:</h4></td>
+                                </tr>
+                            </table>
+                            <table class="table table-bordered">
+                                <tr>
+                                    <td >Asma   :<span t-field="doc.fam_asthma"/></td>
+                                    <td class="text-left">Enfermedades cardiovascuales: <span t-field="doc.fam_cardiovascular"/> </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Diabetes: <span t-field="doc.fam_diabetic"/> </td>
+                                    <td >Alergias:<span t-field="doc.fam_allergy"/></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Cancer  : <span t-field="doc.fam_cancer"/> </td>
+                                    <td class="text-left">Padres vivos: <span t-field="doc.fam_living_parents"/> </td>
+                                </tr>
+                                <tr>
+                                    <td >Hipertensión:<span t-field="doc.fam_hypertension"/></td>
+                                    <td class="text-left">Enfermedades infectocontagiosas : <span t-field="doc.fam_infectious"/> </td>
+                                </tr>
+                            </table>
+                            <table class="table table-bordered">
+                                <tr>
+                                     <td class="text-left">Especifique:<span t-field="doc.fam_specify"/></td>
+                                </tr>
+                            </table>
+                            <table class="table table-bordered">
+                                <tr>
+                                    <td class="text-center"><h4>(2) Antecedentes personales (patológicos):</h4></td>
+                                </tr>
+                            </table>
+
+                            <table class="table table-bordered">
+                                <tr>
+                                    <td >Asma   :<span t-field="doc.per_asthma"/></td>
+                                    <td class="text-left">Enfermedades cardiovascuales: <span t-field="doc.per_cardiovascular"/> </td>
+                                    <td class="text-left">Diabetes: <span t-field="doc.per_diabetic"/> </td>
+                                </tr>
+                                <tr>
+                                    <td >Alergias:<span t-field="doc.per_allergy"/></td>
+                                    <td class="text-left">Cancer  : <span t-field="doc.per_cancer"/> </td>
+                                    <td class="text-left">Padres vivos: <span t-field="doc.per_living_parents"/> </td>
+                                </tr>
+                                <tr>
+                                    <td>Hipertensión:<span t-field="doc.per_hypertension"/></td>
+                                    <td class="text-left">Enfermedades infectocontagiosas : <span t-field="doc.per_infectious"/> </td>
+                                    <td class="text-left">Operaciones previas y facturas : <span t-field="doc.per_previous_operations_frac"/> </td>
+                                </tr>
+                            </table>
+                            <table class="table table-bordered">
+                                <tr>
+                                    <td class="text-left">Especifique:<span t-field="doc.per_specify"/></td>
+                                </tr>
+                            </table>
+                           <table class="table table-bordered">
+                                <tr>
+                                    <td class="text-left" >Nombres y Apellidos del paciente :<span t-field="doc.name"/></td>
+                                    <td class="text-left">N° H.C. : <span t-field="doc.identification_code"/> </td>
+                                </tr>
+                           </table>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+    </data>
+</openerp>

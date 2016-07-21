@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+    <record model='ir.ui.view' id='table_table_tree'>
+        <field name='name'>table.table.tree</field>
+        <field name='model'>table.table</field>
+        <field name='type'>tree</field>
+        <field name='arch' type='xml'>
+            <tree>
+                <field name="name"/>
+                <field name="code"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model='ir.ui.view' id='table_table_form'>
+        <field name='name'>table.table.form</field>
+        <field name='model'>table.table</field>
+        <field name='type'>form</field>
+        <field name="arch" type="xml">
+            <form string="Tabla">
+              <group>
+               <group>
+                <field name="name"/>
+                <field name="code"/>
+               </group>
+              </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="table_table_search" model="ir.ui.view">
+         <field name="name">table.table.search</field>
+         <field name="model">table.table</field>
+         <field name="arch" type="xml">
+             <search string="Tabla">
+                 <field name="name" />
+                 <field name="code" />
+             </search>
+         </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="table_table_action">
+     <field name="name">Tabla</field>
+     <field name="type">ir.actions.act_window</field>
+     <field name="res_model">table.table</field>
+     <field name="view_type">form</field>
+     <field name="view_mode">tree,form</field>
+     <field name="search_view_id" ref="table_table_search" />
+     <field name="domain">[]</field>
+     <field name="context">{}</field>
+    </record>
+
+    </data>
+</openerp>
