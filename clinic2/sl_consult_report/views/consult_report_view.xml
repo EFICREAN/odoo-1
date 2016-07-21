@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+    <template id="report_consult_EL">
+            <t t-call="report.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <t t-call="report.external_layout">
+                        <div class="page">
+                            <div class="oe_structure"/>
+                                <br>
+                                <p> </p>
+                            </br>
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <p class="text-center"><h3>ÓRDEN DE LABORATORIO</h3></p>
+                                </div>
+                            </div>
+                            <br>
+                                <p> </p>
+                            </br>
+                            <br>
+                                <p> </p>
+                            </br>
+                            <div class="row">
+                                <div class="col-xs-6">Nombres   :<span t-field="doc.patient_id.name"/></div>
+                                <div class="col-xs-6">Nro. H.C. : <span t-field="doc.identification_code"/> </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-6">Consulta  :<span t-field="doc.name"/></div>
+                                <div class="col-xs-6">Fecha     : <span t-field="doc.date"/> </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-6">Edad      :<span t-field="doc.age"/></div>
+                                <div class="col-xs-6">Medico    : <span t-field="doc.physician_id.name"/> </div>
+                            </div>
+                            <br>
+                                <p> </p>
+                            </br>
+
+                            <table class="table table-condensed">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th  class="text-right" >Tipo éxamen</th>
+                                    <th  class="text-right">Fecha</th>
+                                </tr>
+                            </thead>
+                                <tbody class="EL_tbody">
+                                    <tr t-foreach="doc.testlab_ids" t-as="l">
+                                        <td>
+                                            <span t-field="l.name"/>
+                                        </td>
+                                        <td  class="text-right">
+                                            <span t-field="l.testtype_id.name"/>
+                                        </td>
+                                        <td  class="text-right">
+                                            <span t-field="l.date"/>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+        <template id="report_consult_IM">
+            <t t-call="report.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <t t-call="report.external_layout">
+                        <div class="page">
+                            <div class="oe_structure"/>
+                                <br>
+                                <p> </p>
+                            </br>
+
+                            <div class="row">
+                                <div class="col-xs-5">
+                                    <p class="text-center"><h3>ÓRDEN DE IMAGEN</h3></p>
+                                </div>
+                            </div>
+                            <br>
+                                <p> </p>
+                            </br>
+                            <br>
+                                <p> </p>
+                            </br>
+                            <div class="row">
+                                <div class="col-xs-6">Nombres   :<span t-field="doc.patient_id.name"/></div>
+                                <div class="col-xs-6">Nro. H.C. : <span t-field="doc.identification_code"/> </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-6">Consulta  :<span t-field="doc.name"/></div>
+                                <div class="col-xs-6">Fecha     : <span t-field="doc.date"/> </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-6">Edad      :<span t-field="doc.age"/></div>
+                                <div class="col-xs-6">Medico    : <span t-field="doc.physician_id.name"/> </div>
+                            </div>
+                            <br>
+                                <p> </p>
+                            </br>
+
+                            <table class="table table-condensed">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th  class="text-right" >Tipo éxamen</th>
+                                    <th  class="text-right">Fecha</th>
+                                </tr>
+                            </thead>
+                                <tbody class="EL_tbody">
+                                    <tr t-foreach="doc.testimage_ids" t-as="l">
+                                        <td>
+                                            <span t-field="l.name"/>
+                                        </td>
+                                        <td  class="text-right">
+                                            <span t-field="l.testtype_id.name"/>
+                                        </td>
+                                        <td  class="text-right">
+                                            <span t-field="l.date"/>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+    </data>
+</openerp>

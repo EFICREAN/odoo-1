@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data>
+
+    <!-- Top menu item -->
+    <menuitem groups="sl_menu_hide.group_original_menu" id="menu_original" name="Original" sequence="1000"/>
+    <menuitem groups="sl_menu_hide.group_original_menu" id="base.menu_reporting" parent="menu_original"/>
+    <menuitem groups="sl_menu_hide.group_original_menu" id="knowledge.menu_document" parent="menu_original"/>
+    <menuitem groups="sl_menu_hide.group_original_menu" id="hr.menu_hr_root" parent="menu_original"/>
+    <menuitem groups="sl_menu_hide.group_original_menu" id="base.menu_base_partner" parent="menu_original"/>
+    <menuitem groups="sl_menu_hide.group_original_menu" id="mail.mail_feeds_main" parent="menu_original"/>
+    <menuitem groups="sl_menu_hide.group_original_menu" id="stock.menu_stock_root" parent="menu_original"/>
+<!--    <menuitem groups="sl_menu_hide.group_original_menu" id="medical.medical_root" parent="menu_original"/>-->
+
+
+
+  </data>
+</openerp>

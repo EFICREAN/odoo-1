@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="clinic_surgeries_view_tree" model="ir.ui.view">
+            <field name="name">clinic.surgeries.tree</field>
+            <field name="model">clinic.surgeries</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <tree string="Cirugías">
+                    <field name="name" />
+                    <field name="patient_id" />
+                    <field name="physician1_id" />
+                    <field name="physician2_id" />
+                    <field name="date_init" />
+                    <field name="date_end" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="clinic_surgeries_view_form" model="ir.ui.view">
+            <field name="name">clinic.surgeries.form</field>
+            <field name="model">clinic.surgeries</field>
+            <field name="priority" eval="5" />
+            <field name="arch" type="xml">
+                <form string="Cirugía"  version="7.0">
+                    <header>
+                        <field name="state" statusbar_visible="draft,reserv,confirm,waiting,process,done" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <h1>
+                            <label string="Paciente"/>
+                            <field name="patient_id"/>
+                        </h1>
+                        <group col="4" colspan="4">
+                            <field name="name" readonly="1"/>
+                        </group>
+                        <group col="4" colspan="4">
+                            <field name="physician1_id"/>
+                            <field name="physician2_id" />
+                            </group>
+                        <notebook>
+                            <page string="Información">
+                                <group >
+                                    <group>
+                                        <field name="description" colspan="4" />
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="Resultados">
+                                <group >
+                                    <group> 
+                                        <field name="res_description" />
+                                    </group>
+                                    <group>
+                                        <field name="res_anesthesia" />
+                                    </group>
+                                    <group>
+                                        <field name="res_others" />
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="Procedimientios">
+                                <group >
+                                    <group colspan="4">
+                                        <field name="procedure_line_ids" context="{'default_surgeries_id': active_id, 'default_patient_id': patient_id}" nolabel="1" colspan="4">
+                                            <tree editable="bottom">
+                                                <field name="procedure_id" options="{'no_open': True, 'no_create': True}"/>
+                                                <field name="patient_id" invisible="1"/>
+                                                <field name="physician_id" />
+                                                <field name="surgeries_id" invisible="1" />
+                                                <field name="date" invisible="1"/>
+                                                <field name="name" readonly="1"/>
+                                            </tree>
+                                        </field>
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="Adicionales">
+                                 <group>
+                                    <group colspan="4">
+                                        <field name="sale_order_id" nolabel="1"/>
+                                    </group>
+                                     <group colspan="4">
+                                        <field name="order_line" colspan="4" nolabel="1" readonly="0">
+                                        </field>
+                                    </group>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="clinic_surgeries_view_search" model="ir.ui.view">
+            <field name="name">medical.surgeries.search</field>
+            <field name="model">clinic.surgeries</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <search string="Medical Appointment">
+                    <field name="name" />
+                    <field name="patient_id" />
+                    <newline />
+                    <group expand="0" string="Group By...">
+                        <filter string="Paciente" domain="[]" context="{'group_by':'patient_id'}" />
+                        <filter string="Fecha" domain="[]"
+                            context="{'group_by':'date_init'}" />
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="clinic_surgeries_action">
+            <field name="name">Cirugías</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">clinic.surgeries</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="clinic_surgeries_view_search" />
+            <field name="context">{}</field>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="clinic_surgeries_action_form">
+            <field name="act_window_id" ref="clinic_surgeries_action" />
+            <field name="sequence" eval="40" />
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="clinic_surgeries_view_form" />
+        </record>
+
+        <record model="ir.actions.act_window.view" id="medical_surgeries_action_tree">
+            <field name="act_window_id" ref="clinic_surgeries_action" />
+            <field name="sequence" eval="30" />
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="clinic_surgeries_view_tree" />
+        </record>
+        
+    </data>
+</openerp>
+        

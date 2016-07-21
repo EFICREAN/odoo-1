@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+
+        <!-- Secuencia para Hospitalizaciones -->
+        <record id="seq_type_inpatient_admission" model="ir.sequence.type">
+            <field name="name">inpatient admission</field>
+            <field name="code">inpatient.admission</field>
+        </record>
+
+        <record id="seq_inpatient_admission" model="ir.sequence">
+            <field name="name">inpatient admission</field>
+            <field name="code">inpatient.admission</field>
+            <field name="prefix">HOSP</field>
+            <field name="padding">3</field>
+        </record>
+
+        <!-- Secuencia para Evoluciones -->
+        <record id="seq_type_evaluation_lines" model="ir.sequence.type">
+            <field name="name">evaluation.lines</field>
+            <field name="code">evaluation.lines</field>
+        </record>
+
+        <record id="seq_evaluation_lines" model="ir.sequence">
+            <field name="name">evaluation.lines</field>
+            <field name="code">evaluation.lines</field>
+            <field name="prefix">EVOL</field>
+            <field name="padding">3</field>
+        </record>
+    </data>
+</openerp>

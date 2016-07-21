@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+<data>
+<template id="report_invoice2">
+    <t t-call="report.html_container">
+    <t t-foreach="docs" t-as="o">
+    <t t-call="report.external_layout">
+        <div class="page">
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <div class="row">
+                <div class="col-xs-1 col-xs-offset-1"><span t-field="o.day"></span></div>
+                <div class="col-xs-2"><span t-field="o.month"></span></div>
+                <div class="col-xs-1"><span t-field="o.year"></span></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6 col-xs-offset-1"><span t-field="o.partner_id.name"></span></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6 col-xs-offset-1"><span t-field="o.partner_id.street"></span></div>
+            </div>
+
+            <br></br>
+            <br></br>
+            <!--
+            -->
+            <table style="border:none;padding:none;border-collapse:separate;outline:none;line-height: 1.8em;border-spacing: 15px;" width="100%"  cellpadding="0" cellspacing="2"  class="nothing">
+                <tbody >
+                    <tr t-foreach="o.invoice_line" t-as="l">
+                        <td><span t-field="l.quantity"/></td>
+                        <td><span t-field="l.name"/></td>
+                        <td class="text-right">
+                            <span t-field="l.price_unit"
+                                t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+<!--
+            <div style="position:absolute;top:10px;"> .top 10xp</div>
+            <div style="position:absolute;top:0px;"> .top 0xp</div>
+            <div style="position:absolute;top:20px;"> .top 20xp</div>
+            <div style="position:absolute;top:40px;left:30px;"> .top 40xp,left:30px</div>
+            <div style="position:absolute;top:100px;"> .top 100xp</div>
+            <div style="position:absolute;top:200px;"> .top 200xp</div>
+            <div style="position:absolute;top:300px;"> .top 300xp</div>
+            <div style="position:absolute;top:400px;"> .top 400xp</div>
+            <div style="position:absolute;top:500px;"> .top 500xp</div>
+           -->
+
+            <!-- Posicion fija -->
+            <div style="position:absolute;top:200px;left:700px;">
+                <span t-field="o.ruc"></span>
+            </div>
+
+            <div style="position:absolute;top:600px;left:70px;">
+                <span t-field="o.amount_to_text"/>
+            </div>
+
+            <div style="position:absolute;top:600px;left:820px;">
+                <div style="position:relative">
+                    <p class="text-right">
+                        <span t-field="o.amount_untaxed" t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
+                    </p>
+                    <p class="text-right">
+                        <span t-field="o.amount_tax" t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
+                    </p>
+                    <p class="text-right">
+                        <span t-field="o.amount_total" t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
+                    </p>
+                </div>
+            </div>
+
+       </div>
+         </t>
+       </t>
+    </t>
+</template>
+
+<template id="report_boleta">
+    <t t-call="report.html_container">
+    <t t-foreach="docs" t-as="o">
+    <t t-call="report.external_layout">
+        <div class="page">
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+
+            <div class="row">
+                <div class="col-xs-5 col-xs-offset-1"><span t-field="o.partner_id.name"></span></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-5 col-xs-offset-1"><span t-field="o.partner_id.street"></span></div>
+                <div class="col-xs-2"><span t-field="o.partner_id.number_doc"></span></div>
+            </div>
+            <br></br>
+            <table style="border:none;padding:none;border-collapse:separate;outline:none;line-height: 1.8em;border-spacing: 15px;" width="100%"  cellpadding="0" cellspacing="2"  class="nothing">
+                <tbody style="border-with:0; padding:0;">
+                    <tr t-foreach="o.invoice_line" t-as="l" class="nobord">
+                        <td><span t-field="l.quantity"/></td>
+                        <td><span t-field="l.name"/></td>
+                        <td class="text-right">
+                            <span t-field="l.price_unit"
+                                t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+<!--
+            <div style="position:absolute;top:10px;"> .top 10xp</div>
+            <div style="position:absolute;top:0px;"> .top 0xp</div>
+            <div style="position:absolute;top:20px;"> .top 20xp</div>
+            <div style="position:absolute;top:40px;left:30px;"> .top 40xp,left:30px</div>
+            <div style="position:absolute;top:100px;"> .top 100xp</div>
+            <div style="position:absolute;top:200px;"> .top 200xp</div>
+            <div style="position:absolute;top:300px;"> .top 300xp</div>
+            <div style="position:absolute;top:400px;"> .top 400xp</div>
+            <div style="position:absolute;top:500px;"> .top 500xp</div>
+            <div class="row">
+                <div class="col-xs-6 col-xs-offset-1">
+                    <span t-field="o.amount_to_text"/>
+                </div>
+                <div class="col-xs-5">
+                    <p class="text-right">
+                    <span t-field="o.amount_untaxed" t-field-optiborder-spacing: 15px;ons='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
+                    </p>
+                </div>
+            </div>
+            <p class="text-right">
+                <span t-field="o.amount_tax" t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
+            </p>
+-->
+ <!-- Posicion fija -->
+            <div style="position:absolute;top:140px;left:340px;">
+                <span t-field="o.day"></span>
+            </div>
+            <div style="position:absolute;top:140px;left:370px;">
+                <span t-field="o.month_number"></span>
+            </div>
+            <div style="position:absolute;top:140px;left:400px;">
+                <span t-field="o.year"></span>
+            </div>
+
+            <div style="position:absolute;top:600px;left:380px;">
+                <p class="text-right">
+                    <span t-field="o.amount_total" t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
+                </p>
+            </div>
+        </div>
+         </t>
+       </t>
+    </t>
+</template>
+
+
+
+<!--
+<template id="report_invoice2">
+    <t t-call="report.html_container">
+        <t t-foreach="doc_ids" t-as="doc_id">
+            <t t-raw="translate_doc(doc_id, doc_model, 'partner_id.lang', 'sl_account_invoice_report.report_invoice_document2')"/>
+        </t>
+    </t>
+</template>
+-->
+</data>
+</openerp>

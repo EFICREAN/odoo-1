@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="clinic_physician_view_form" model="ir.ui.view">
+             <field name="name">clinic.physician.inherit.form</field>
+             <field name="model">medical.physician</field>
+             <field name="inherit_id" ref="medical.medical_physician_view_form"/>
+             <field name="arch" type="xml">
+                <xpath expr="//field[@name='company_id']" position="after" >
+                    <field name="user_id" placeholder="Usuario ERP"></field>
+                </xpath>
+             </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="clinic_physician_action">
+            <field name="name">Médicos</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">medical.physician</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="medical.medical_physician_view_search" />
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="clinic_physician_action_form">
+            <field name="act_window_id" ref="clinic_physician_action" />
+            <field name="sequence" eval="20" />
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="medical.medical_physician_view_form" />
+        </record>
+
+        <record model="ir.actions.act_window.view" id="clinic_physician_action_tree">
+            <field name="act_window_id" ref="clinic_physician_action" />
+            <field name="sequence" eval="10" />
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="medical.medical_physician_view_tree" />
+        </record>
+
+    </data>
+</openerp>

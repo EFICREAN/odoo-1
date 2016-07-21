@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="testimage_sale_wizard_view_form">
+            <field name="name">testimage.sale.wizard.view.form</field>
+            <field name="model">testimage.sale.wizard</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header />
+                    <sheet>
+                        <group name="data">
+                            <group name="testimage" colspan="2">
+                                <field name="testimage_line_id" colspan="2" readonly="1" />
+                                <field name="partner_id" colspan="2" invisible="1"/>
+                            </group>
+                            <group name="pay" colspan="2">
+                                <field name="product_tmpl_id" readonly="1" colspan="2" />
+                            </group>
+                        </group>
+                    </sheet>
+                    <footer>
+                        <button special="cancel"
+                                string="Cancelar" />
+                        <button name="add_sale"
+                                type="object"
+                                context="{'view_testimage': True}"
+                                string="Agregar y ver pedido"
+                                class="oe_highlight" />
+                        <button name="add_sale"
+                                type="object"
+                                context="{'view_testimage': True}"
+                                string="Agregar pedido"
+                                class="oe_highlight" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="testimage_sale_wizard_action">
+            <field name="name">Agregando prueba imagen a pedido</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">testimage.sale.wizard</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="testimage_sale_wizard_view_form" />
+            <field name="context">{
+                'default_testimage_line_id': context.get('active_id',False),
+                }</field>
+            <field name="target">new</field>
+        </record>
+    </data>
+</openerp>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+    <record model='ir.ui.view' id='patient_triage_tree'>
+            <field name='name'>patient.triage.tree</field>
+            <field name='model'>patient.triage</field>
+            <field name='type'>tree</field>
+            <field name='arch' type='xml'>
+                <tree>
+                    <field name="name"></field>
+                    <field name="patient_id"></field>
+                    <field name="date"></field>
+                </tree>
+            </field>
+    </record>
+
+    <record model='ir.ui.view' id='patient_triage_form'>
+            <field name='name'>patient.triage.form</field>
+            <field name='model'>patient.triage</field>
+            <field name='type'>form</field>
+            <field name="arch" type="xml">
+                <form string="Triaje">
+                  <group>
+                   <group>
+                    <field name="name"></field>
+                    <field name="patient_id"></field>
+                    <field name="date"></field>
+                    <field name="pediatric"></field>
+                    <field name="adult"></field>
+                    <field name="blood_pressure"></field>
+                    <field name="frecuence_card"></field>
+                    <field name="respiration"></field>
+                   </group>
+                   <group>
+                    <field name="glycemia_ammount"> </field>
+                    <field name="temp_type"> </field>
+                    <!--<field name="temperature_ammount" attrs="{'invisible': [('temp_type','=','no_aferril')]}" />-->
+                    <field name="temperature_ammount" attrs="{'invisible':[('temp_type','in',['afebril'])]}"/>
+                    <field name="saturation_oxigen"></field>
+                    <field name="weight"></field>
+                    <field name="size"></field>
+                    <field name="escale_plain"></field>
+                   </group>
+                  </group>
+                </form>
+            </field>
+     </record>
+
+     <record id="patient_triage_search" model="ir.ui.view">
+         <field name="name">patient.triaje.search</field>
+         <field name="model">patient.triage</field>
+         <field name="arch" type="xml">
+             <search string="Triage búsqueda">
+                 <field name="patient_id" />
+                 <field name="date" />
+                 <newline />
+                 <group expand="0" string="Group By...">
+                     <filter string="Paciente" domain="[]" context="{'group_by':'patient_id'}" />
+                     <filter string="Fecha" domain="[]" context="{'group_by':'date'}" />
+                 </group>
+             </search>
+         </field>
+         </record>
+
+         <record model="ir.actions.act_window" id="patient_triage_action">
+             <field name="name">Triaje</field>
+             <field name="type">ir.actions.act_window</field>
+             <field name="res_model">patient.triage</field>
+             <field name="view_type">form</field>
+             <field name="view_mode">tree,form</field>
+             <field name="search_view_id" ref="patient_triage_search" />
+             <field name="domain">[]</field>
+             <field name="context">{}</field>
+         </record>
+
+    </data>
+</openerp>

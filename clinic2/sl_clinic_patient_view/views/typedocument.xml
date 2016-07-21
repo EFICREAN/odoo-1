@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+    <record model='ir.ui.view' id='patient_typedocument_tree'>
+            <field name='name'>clinic.typedocument.tree</field>
+            <field name='model'>clinic.typedocument</field>
+            <field name='type'>tree</field>
+            <field name='arch' type='xml'>
+                <tree>
+                    <field name="name"/>
+                    <field name="code"/>
+                </tree>
+            </field>
+    </record>
+
+    <record model='ir.ui.view' id='patient_typedocument_form'>
+            <field name='name'>clinic.typedocument.form</field>
+            <field name='model'>clinic.typedocument</field>
+            <field name='type'>form</field>
+            <field name="arch" type="xml">
+                <form string="Triaje">
+                  <group>
+                   <group>
+                        <field name="name"/>
+                        <field name="code"/>
+                   </group>
+                  </group>
+                </form>
+            </field>
+     </record>
+
+     <record id="patient_typedocument_search" model="ir.ui.view">
+         <field name="name">clinic.typedocument.search</field>
+         <field name="model">clinic.typedocument</field>
+         <field name="arch" type="xml">
+             <search string="Tipo de documento">
+                 <field name="name" />
+                 <field name="code" />
+                 <newline />
+             </search>
+         </field>
+         </record>
+
+     <record model="ir.actions.act_window" id="patient_typedocument_action">
+         <field name="name">Tipo documento</field>
+         <field name="type">ir.actions.act_window</field>
+         <field name="res_model">clinic.typedocument</field>
+         <field name="view_type">form</field>
+         <field name="view_mode">tree,form</field>
+         <field name="search_view_id" ref="patient_typedocument_search" />
+         <field name="domain">[]</field>
+         <field name="context">{}</field>
+     </record>
+
+    </data>
+</openerp>
