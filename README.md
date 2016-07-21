@@ -1,3 +1,0 @@
-# odoo
-desarrollos odoo
-ok
