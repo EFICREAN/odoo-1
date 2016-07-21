@@ -1,0 +1,15 @@
+<!-- PARTNER VIEW -->
+<openerp>
+    <data>
+    	<record model='ir.ui.view' id='pos_config_view_dir'>
+		<field name='name'>pos.config.view_dir</field>
+		<field name='model'>pos.config</field>
+		<field name='inherit_id' ref='point_of_sale.view_pos_config_form'/>
+		<field name='type'>form</field>
+		<field name='arch' type='xml'>
+			<field name="x_dir_local"/>
+		</field>
+	</record>
+  </data>
+</openerp>
+ 
