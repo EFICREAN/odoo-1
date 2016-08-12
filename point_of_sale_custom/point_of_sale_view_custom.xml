@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <menuitem icon="STOCK_PRINT" action="action_report_pos_details_custom"
+                id="menu_pos_details_custom" parent="point_of_sale.menu_point_rep" sequence="7" />
+    </data>
+</openerp>

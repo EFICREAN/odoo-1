@@ -29,11 +29,11 @@ class Account_Invoice_Report(models.Model):
     _inherit = 'account.invoice'
     @api.multi
     def print_invoice2(self):
-        return self.env['report'].get_action(self,'account_invoice_report.report_invoice2')
+        return self.env['report'].get_action(self,'sl_account_invoice_report.report_invoice2')
 
     @api.multi
     def print_boleta(self):
-        return self.env['report'].get_action(self, 'account_invoice_report.report_boleta')
+        return self.env['report'].get_action(self, 'sl_account_invoice_report.report_boleta')
 
     boleta_invoice = fields.Selection([('boleta', 'Boleta'), ('invoice', 'Factura')], "Tipo documento", related="journal_id.boleta_invoice")
 

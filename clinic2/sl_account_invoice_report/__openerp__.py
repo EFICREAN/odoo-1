@@ -9,10 +9,10 @@
     'website': 'http://www.softlabperu.com',
     'license': 'AGPL-3',
     'data': [
-        'sl_account_invoice_report.xml',
-        'sl_account_invoice.xml',
+        'account_invoice_report.xml',
+        'account_invoice_custom.xml',
         'views/account_invoice_report_view.xml',
-        'sl_account_journal.xml'
+        'account_journal.xml'
     ],
     'installable': True,
     'application': True,

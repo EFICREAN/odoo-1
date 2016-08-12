@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<openerp>
+    <data>
+        <report
+            id="pos_invoice_report"
+            string="Factura ticket"
+            model="pos.order"
+            report_type="qweb-pdf"
+            name="point_of_sale_custom.report_invoice2"
+            file="point_of_sale_custom.report_invoice2"
+        />
+         <report
+            id="pos_lines_detail_custom"
+            string="Details of Sales Custom"
+            model="pos.order"
+            report_type="qweb-pdf"
+            name="point_of_sale_custom.report_detailsofsales_custom"
+            file="point_of_sale_custom.report_detailsofsales_custom"
+            menu="False"
+         />
+    </data>
+</openerp>
