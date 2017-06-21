@@ -1496,7 +1496,7 @@
                 <t t-foreach="paymentlines" t-as="line">
                   <tr>
                       <td>
-                          Tipo : <t t-esc="line.name"/>
+                          <t t-esc="line.name"/>
                       </td>
                       <td class="pos-right-align">
                           <t t-esc="widget.format_currency(line.get_amount())"/>
