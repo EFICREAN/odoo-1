@@ -1401,19 +1401,42 @@
 
     <t t-name="PosTicket">
         <div class="pos-sale-ticket">
-            
-            <div class="pos-center-align"><t t-esc="moment().format('L LT')"/> <t t-esc="order.name"/></div>
+           <!-- 
+            <div class="pos-center-align">
+                <t t-esc="moment().format('L LT')"/> <t t-esc="order.name"/></div>
             <br />
-            <t t-esc="widget.pos.company.name"/><br />
+            -->
+            <div class="pos-center-align">
+                <t t-esc="widget.pos.company.name"/>
+                <br />
+                 Ruc:<b><t t-esc="widget.pos.company.email"/></b>
+                <br />
+                 Local:<b><t t-esc="widget.pos.config.receipt_footer"/></b>
+                <br />
+            </div>
+            
+            <!--
             Phone: <t t-esc="widget.pos.company.phone || ''"/><br />
             User: <t t-esc="widget.pos.cashier ? widget.pos.cashier.name : widget.pos.user.name"/><br />
             <br />
+            -->
+            
+            <br />
+			<b><t t-esc="widget.pos.config.receipt_header"/></b>
+            <br />
+                Nro. Ticket: <b><t t-esc="order.name"/></b>
+            <br />
+            <br />
+            
+            <!--
             <t t-if="receipt.header">
                 <div style='text-align:center'>
                     <t t-esc="receipt.header" />
                 </div>
                 <br />
             </t>
+            -->
+            
             <table class='receipt-orderlines'>
                 <colgroup>
                     <col width='50%' />
@@ -1453,12 +1476,14 @@
                         </td>
                     </tr>
                 </t>
+                <!-- que no figure el descuento
                 <tr>
                     <td>Discount:</td>
                     <td class="pos-right-align">
                         <t t-esc="widget.format_currency(order.get_total_discount())"/>
                     </td>
                 </tr>
+                -->
                 <tr class="emph">
                     <td>Total:</td>
                     <td class="pos-right-align">
@@ -1471,7 +1496,7 @@
                 <t t-foreach="paymentlines" t-as="line">
                   <tr>
                       <td>
-                          <t t-esc="line.name"/>
+                          Tipo : <t t-esc="line.name"/>
                       </td>
                       <td class="pos-right-align">
                           <t t-esc="widget.format_currency(line.get_amount())"/>
@@ -1485,12 +1510,15 @@
                     <t t-esc="widget.format_currency(order.get_change())"/>
                     </td></tr>
             </table>
+            <!-- No footer abajo del ticket
             <t t-if="receipt.footer">
                 <br />
                 <div style='text-align:center'>
                     <t t-esc="receipt.footer" />
                 </div>
             </t>
+            -->
+            
         </div>
     </t>
 
