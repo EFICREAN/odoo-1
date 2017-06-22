@@ -1424,7 +1424,9 @@
             <br />
 			<b><t t-esc="widget.pos.config.receipt_header"/></b>
             <br />
-                Nro. Ticket: <b><t t-esc="order.name"/></b>
+                
+		<!--Nro. Ticket: <b><t t-esc="order.name"/></b>-->
+		Nro. Ticket: <b><t t-esc="widget.pos.session.sequence_number"/></b>
             <br />
             <br />
             
