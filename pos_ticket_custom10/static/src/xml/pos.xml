@@ -1429,10 +1429,10 @@
 		Nro. Ticket: <b><t t-esc="widget.pos.get_order_list().sequence_number"/></b>
 		<div class='client-detail'>
                         <span class='label'>Tax ID</span>
-                        <t t-if='widget.pos.partner.vat'>
-                            <span class='detail vat'><t t-esc='widget.pos.partner.vat'/></span>
+                        <t t-if='widget.pos.partner.name'>
+                            <span class='detail vat'><t t-esc='widget.pos.partner.name'/></span>
                         </t>
-                        <t t-if='!widget.pos.partner.vat'>
+                        <t t-if='!widget.pos.partner.name'>
                             <span class='detail vat empty'>N/A</span>
                         </t>
                 </div>
