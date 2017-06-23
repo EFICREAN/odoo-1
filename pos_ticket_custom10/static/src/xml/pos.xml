@@ -1426,7 +1426,17 @@
             <br />
                 
 		<!--Nro. Ticket: <b><t t-esc="order.name"/></b>-->
-		Nro. Ticket: <b><t t-esc="widget.pos_session.sequence_number"/></b>
+		Nro. Ticket: <b><t t-esc="widget.pos.pos_session.sequence_number"/></b>
+		<div class='client-detail'>
+                        <span class='label'>Tax ID</span>
+                        <t t-if='partner.vat'>
+                            <span class='detail vat'><t t-esc='partner.vat'/></span>
+                        </t>
+                        <t t-if='!partner.vat'>
+                            <span class='detail vat empty'>N/A</span>
+                        </t>
+                </div>
+		
             <br />
             <br />
             
