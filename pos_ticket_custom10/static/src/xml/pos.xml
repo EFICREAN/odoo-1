@@ -1427,7 +1427,7 @@
             <br />
                 
 		<!--Nro. Ticket: <b><t t-esc="order.name"/></b>-->
-		Nro. Ticket: <b><t t-esc="order.pos_reference"/></b>
+		.Nro. Ticket : <b><t t-esc="order.pos_reference"/></b>
 		
 		<t t-jquery="[t-esc='widget.pos.shop.name']" t-operation="after">
             	  <t t-if="order.attributes.client">
