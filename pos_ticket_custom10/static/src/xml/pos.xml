@@ -1409,7 +1409,8 @@
             <div class="pos-center-align">
                 <t t-esc="widget.pos.company.name"/>
                 <br />
-                 Ruc:<b><t t-esc="widget.pos.company.email"/></b>
+                 <!--Ruc:<b><t t-esc="widget.pos.company.email"/></b>-->
+		 Ruc:<t t-esc="widget.pos.company.vat || ''"/>
                 <br />
                  Local:<b><t t-esc="widget.pos.config.receipt_footer"/></b>
                 <br />
@@ -1427,17 +1428,17 @@
                 
 		<!--Nro. Ticket: <b><t t-esc="order.name"/></b>-->
 		Nro. Ticket: <b><t t-esc="widget.pos.get_order_list().sequence_number"/></b>
-		<!--
-		<div class='client-detail'>
-                        <span class='label'>Tax ID</span>
-                        <t t-if='widget.pos.partner.name'>
-                            <span class='detail vat'><t t-esc='widget.pos.partner.name'/></span>
-                        </t>
-                        <t t-if='!widget.pos.partner.name'>
-                            <span class='detail vat empty'>N/A</span>
-                        </t>
-                </div>
-		-->
+		
+		<t t-jquery="[t-esc='widget.pos.shop.name']" t-operation="after">
+            	  <t t-if="order.attributes.client">
+                	<br/><br/>
+                	<span class="customer_title">Customer data</span><br />
+                	Name: <t t-esc="order.attributes.client.name ? order.attributes.client.name : ''"/><br />
+                	VAT: <t t-esc="order.attributes.client.vat ? order.attributes.client.vat : ''"/><br />
+                	Address: <t t-esc="order.attributes.client.street ? order.attributes.client.street : ''"/>
+            	  </t>
+        	</t>
+		
             <br />
             <br />
             
