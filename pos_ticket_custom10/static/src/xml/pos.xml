@@ -1429,9 +1429,9 @@
 		<!--Nro. Ticket: <b><t t-esc="order.name"/></b>-->
 		Nro. sec number : <b><t t-esc="order.sequence_number"/></b>
 		Nro. name : <b><t t-esc="order.name"/></b>
-		Nro. pos_ref. : <b><t t-esc="session.name"/></b>
+		Nro. pos_ref. : <b><t t-esc="order.session_id"/></b>
 		<!--Nro. sess_pos_ref. : <b><t t-esc="order.session_id.sequence_number"/></b>
-		Nro. sess_name. : <b><t t-esc="order.session_id.name"/></b> -->
+		Nro. sess_name. : <b><t t-esc="order.pos_session.sequence_number"/></b> -->
 		
 		<t t-jquery="[t-esc='widget.pos.shop.name']" t-operation="after">
             	  <t t-if="order.attributes.client">
