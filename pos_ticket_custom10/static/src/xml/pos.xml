@@ -1428,7 +1428,7 @@
                 
 		<!--Nro. Ticket: <b><t t-esc="order.name"/></b>-->
 		Nro. sec number : <b><t t-esc="order.sequence_number"/></b><br />
-		Nro. name : <b><t t-esc="order.name"/></b><br />
+		<!-Nro. name : <b><t t-esc="order.name"/></b><br /> -->
 		Nro. pos_ref. : <b><t t-esc="order.session_id"/></b><br />
 		<!--Nro. sess_pos_ref. : <b><t t-esc="order.session_id.sequence_number"/></b>
 		Nro. sess_name. : <b><t t-esc="order.pos_session.sequence_number"/></b> -->
