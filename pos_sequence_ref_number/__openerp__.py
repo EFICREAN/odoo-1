@@ -18,9 +18,9 @@
     'data': [
         'views/pos_template.xml'
     ],
-    'qweb': [
-        'static/src/xml/pos.xml'
-    ],
+   # 'qweb': [
+   #     'static/src/xml/pos.xml'
+   # ],
     'installable': True,
     'application': False,
     'auto_install': False,
