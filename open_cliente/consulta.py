@@ -22,26 +22,13 @@ call = functools.partial(xmlrpclib.ServerProxy(ROOT +
 with open('temp.csv', 'w') as csvfile:
 	xwriter = csv.writer(csvfile, delimiter=' ', quotechar='|', quoting=csv.QUOTE_MINIMAL)
 	
-def seleccionA():
-	Campos = call('res.partner','search_read', [], ['id','name'])
-	for Campo in Campos:
-		xwriter.writerow([Campo['name'], Campo['id']])
-		print "%s, %s" % (Campo['id'], Campo['name'])
 
-def seleccionB():
-	Campos = call('open_cliente.urb','search_read', [], ['id','name'])
-	for Campo in Campos:
-		xwriter.writerow([Campo['name'], Campo['id']])
-		print "%s, %s" % (Campo['id'], Campo['name'])
+Campos = call('res.partner','search_read', [], ['id','name'])
+for Campo in Campos:
+	xwriter.writerow([Campo['name'], Campo['id']])
+	print "%s, %s" % (Campo['id'], Campo['name'])
 
-		
-available_actions = {"1": seleccionA,
-                     "2": seleccionB}
-action = raw_input("What should I do now? ")
-try:
-    available_actions[action]()
-except KeyError:
-    print "Unrecognized command ", action
+
 
 #3.create a new session
 
