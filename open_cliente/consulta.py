@@ -17,6 +17,13 @@ print "Logged in as %s (uid:%d)" % (USER,uid)
 call = functools.partial(xmlrpclib.ServerProxy(ROOT + 
 	'object').execute,DB, uid, PASS)
 
+
+with open('temp.csv', newline='', encoding='utf-8') as f:
+    reader = csv.reader(f)
+    for row in reader:
+        print(row)
+	
+	
 # 2. Read the sessions
 #xwriter = csv.writer(open('temp.csv','wb','UTF-8'))
 with open('temp.csv', newline='', encoding='utf-8') as csvfile:
