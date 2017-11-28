@@ -19,9 +19,8 @@ call = functools.partial(xmlrpclib.ServerProxy(ROOT +
 
 # 2. Read the sessions
 #xwriter = csv.writer(open('temp.csv','wb','utf-8'))
-with open('temp.csv', 'w', newline='') as csvfile:
-	xwriter = csv.writer(csvfile, delimiter=' ',
-                            quotechar='|', quoting=csv.QUOTE_MINIMAL)
+with open('temp.csv', 'w') as csvfile:
+	xwriter = csv.writer(csvfile, delimiter=' ', quotechar='|', quoting=csv.QUOTE_MINIMAL)
 	
 def seleccionA():
 	Campos = call('res.partner','search_read', [], ['id','name'])
