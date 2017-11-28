@@ -18,8 +18,8 @@ call = functools.partial(xmlrpclib.ServerProxy(ROOT +
 	'object').execute,DB, uid, PASS)
 
 # 2. Read the sessions
-#xwriter = csv.writer(open('temp.csv','wb','utf-8'))
-with open('temp.csv', 'wb') as csvfile:
+#xwriter = csv.writer(open('temp.csv','wb','UTF-8'))
+with open('temp.csv', 'wb', 'UTF-8') as csvfile:
 	xwriter = csv.writer(csvfile)
 	
 
