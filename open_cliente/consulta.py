@@ -4,10 +4,10 @@ import functools
 import xmlrpclib
 import csv
 
-HOST = '104.236.123.102'
+HOST = '66.228.37.73'
 PORT = 8069
-DB = 'miaspa_bc'
-USER = 'admin'
+DB = 'PAN_PROD'
+USER = 'admin01'
 PASS = 'admin'
 ROOT = 'https://%s/xmlrpc/' % (HOST)
 
