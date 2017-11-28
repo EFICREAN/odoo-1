@@ -19,13 +19,13 @@ call = functools.partial(xmlrpclib.ServerProxy(ROOT +
 
 # 2. Read the sessions
 #xwriter = csv.writer(open('temp.csv','wb','utf-8'))
-with open('temp.csv', 'w') as csvfile:
+with open('temp.csv', 'wb') as csvfile:
 	xwriter = csv.writer(csvfile)
 	
 
 Campos = call('res.partner','search_read', [], ['id','name'])
 for Campo in Campos:
-	xwriter.writerow([Campo['name'], Campo['id']])
+	#xwriter.writerow([Campo['name'], Campo['id']])
 	print "%s, %s" % (Campo['id'], Campo['name'])
 
 
