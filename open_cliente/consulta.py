@@ -12,7 +12,7 @@ ROOT = 'https://%s/xmlrpc/' % (HOST)
 
 # 1. Login
 uid = xmlrpclib.ServerProxy(ROOT + 'common').login(DB,USER,PASS)
-print "Logged in as %s (uid:%d)" % (USER,uid)
+#print "Logged in as %s (uid:%d)" % (USER,uid)
 
 call = functools.partial(xmlrpclib.ServerProxy(ROOT + 
 	'object').execute,DB, uid, PASS)
